@@ -45712,7 +45712,7 @@ var SofaFactory = /** @class */ (function () {
         Promise.all([
             new Promise(function (resolve, reject) {
                 var mainLoader = new THREE.JSONLoader();
-                mainLoader.load(constants_1.ROOT + "./blenderobj/sofa.json", function (geometry) {
+                mainLoader.load(constants_1.ROOT + "./tree/master/blenderobj/sofa.json", function (geometry) {
                     _this.geometry = geometry;
                     resolve();
                 }, function () { }, function (e) {
@@ -45721,7 +45721,7 @@ var SofaFactory = /** @class */ (function () {
             }),
             new Promise(function (resolve, reject) {
                 var mainLoader = new THREE.JSONLoader();
-                mainLoader.load(constants_1.ROOT + "./blenderobj/arm.json", function (geometry) {
+                mainLoader.load(constants_1.ROOT + "./tree/master/blenderobj/arm.json", function (geometry) {
                     _this.armrestGeometry = geometry;
                     resolve();
                 }, function () { }, function (e) {
@@ -45730,7 +45730,7 @@ var SofaFactory = /** @class */ (function () {
             }),
             new Promise(function (resolve, reject) {
                 var mainLoader = new THREE.JSONLoader();
-                mainLoader.load(constants_1.ROOT + "./blenderobj/backrest.json", function (geometry) {
+                mainLoader.load(constants_1.ROOT + "./tree/master/blenderobj/backrest.json", function (geometry) {
                     _this.backsupportGeometry = geometry;
                     resolve();
                 }, function () { }, function (e) {
@@ -45739,7 +45739,7 @@ var SofaFactory = /** @class */ (function () {
             }),
             new Promise(function (resolve, reject) {
                 var mainLoader = new THREE.JSONLoader();
-                mainLoader.load(constants_1.ROOT + "./blenderobj/sofalegs.json", function (geometry) {
+                mainLoader.load(constants_1.ROOT + "./tree/master/blenderobj/sofalegs.json", function (geometry) {
                     _this.sofaLegsGeometry = geometry;
                     resolve();
                 }, function () { }, function (e) {
@@ -45748,7 +45748,7 @@ var SofaFactory = /** @class */ (function () {
             }),
             new Promise(function (resolve, reject) {
                 var mainLoader = new THREE.JSONLoader();
-                mainLoader.load(constants_1.ROOT + "./blenderobj/armlegs.json", function (geometry) {
+                mainLoader.load(constants_1.ROOT + "./tree/master/blenderobj/armlegs.json", function (geometry) {
                     _this.armrestLegsGeometry = geometry;
                     resolve();
                 }, function () { }, function (e) {
@@ -45766,7 +45766,7 @@ var SofaFactory = /** @class */ (function () {
             // }),
             new Promise(function (resolve, reject) {
                 var mainLoader = new THREE.JSONLoader();
-                mainLoader.load(constants_1.ROOT + "./blenderobj/backrestpins.json", function (geometry) {
+                mainLoader.load(constants_1.ROOT + "./tree/master/blenderobj/backrestpins.json", function (geometry) {
                     _this.sofaPinsGeometry = geometry;
                     resolve();
                 }, function () { }, function (e) {
@@ -45775,7 +45775,7 @@ var SofaFactory = /** @class */ (function () {
             }),
             new Promise(function (resolve, reject) {
                 var mainLoader = new THREE.JSONLoader();
-                mainLoader.load(constants_1.ROOT + "./blenderobj/cushion.json", function (geometry) {
+                mainLoader.load(constants_1.ROOT + "./tree/master/blenderobj/cushion.json", function (geometry) {
                     geometry.computeVertexNormals();
                     _this.cushionGeometry = geometry;
                     resolve();
@@ -45786,7 +45786,7 @@ var SofaFactory = /** @class */ (function () {
             new Promise(function (resolve, reject) {
                 var textureLoader = new THREE.TextureLoader();
                 textureLoader.crossOrigin = '';
-                textureLoader.load(constants_1.ROOT + "./blenderobj/SOFA/CHALK.jpg", function (texture) {
+                textureLoader.load(constants_1.ROOT + "./tree/master/blenderobj/SOFA/CHALK.jpg", function (texture) {
                     // textureLoader.load(ROOT + "./blenderobj/SOFA/CHALK.jpg",(texture)=>{
                     texture.wrapS = THREE.RepeatWrapping;
                     texture.wrapT = THREE.RepeatWrapping;
@@ -45800,7 +45800,7 @@ var SofaFactory = /** @class */ (function () {
             new Promise(function (resolve, reject) {
                 var textureLoader = new THREE.TextureLoader();
                 textureLoader.crossOrigin = '';
-                textureLoader.load(constants_1.ROOT + "./blenderobj/normal.jpg", function (texture) {
+                textureLoader.load(constants_1.ROOT + "./tree/master/blenderobj/normal.jpg", function (texture) {
                     texture.wrapS = THREE.RepeatWrapping;
                     texture.wrapT = THREE.RepeatWrapping;
                     texture.repeat.set(constants_1.TEXTURE_WRAPS, constants_1.TEXTURE_WRAPT);
