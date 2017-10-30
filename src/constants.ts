@@ -66,7 +66,7 @@ export const SPOT_DECAY = 1
 
 /* root folder for loading assets */
 
-export const ROOT = 'https://xgui3783.github.io/'
+export const ROOT = 'https://unilimes.github.io.'
 // export const ROOT = 'http://localhost/kopa2/'
 
 export const PRICE = {

@@ -43807,7 +43807,7 @@ exports.SPOT_ANGLE = 3.05;
 exports.SPOT_PENUMBRA = 0.3;
 exports.SPOT_DECAY = 1;
 /* root folder for loading assets */
-exports.ROOT = 'https://xgui3783.github.io/';
+exports.ROOT = 'https://unilimes.github.io.';
 // export const ROOT = 'http://localhost/kopa2/'
 exports.PRICE = {
     SOFA: 330,
@@ -45786,7 +45786,7 @@ var SofaFactory = /** @class */ (function () {
             new Promise(function (resolve, reject) {
                 var textureLoader = new THREE.TextureLoader();
                 textureLoader.crossOrigin = '';
-                textureLoader.load(constants_1.ROOT + "./blenderobj/white.jpg", function (texture) {
+                textureLoader.load(constants_1.ROOT + "./blenderobj/SOFA/CHALK.jpg", function (texture) {
                     // textureLoader.load(ROOT + "./blenderobj/SOFA/CHALK.jpg",(texture)=>{
                     texture.wrapS = THREE.RepeatWrapping;
                     texture.wrapT = THREE.RepeatWrapping;
