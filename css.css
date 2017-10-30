@@ -1,0 +1,181 @@
+        canvas{
+            width: 100%;
+            height: auto;
+        }
+        #container
+        {
+            position:relative;
+            width:100%;
+            height:576px;
+            font-family: "Helvetica Neue", Helvetica, sans-serif
+        }
+        #padding
+        {
+            height:2000px;
+        }
+        #webgl_control
+        {
+            margin-left:10%;
+            padding-top:20px
+        }
+        #webgl_hidden_bar
+        {
+            visibility: hidden;
+        }
+        #webgl_control_zoomIn img,#webgl_control_zoomOut img
+        {
+            width: 20px;
+            height: 20px;
+        }
+        #webgl_control_zoomIn:hover,#webgl_control_zoomOut:hover
+        {
+            cursor:pointer;
+        }
+        #webgl_overlay_footer
+        {
+            background-color:rgba(200,200,200,0.4);
+            display:block;
+            width:200px;
+            min-height: 100px;
+            overflow:hidden;
+            position: absolute;
+            bottom:2%;
+            right:2%;
+            visibility: hidden;
+        }
+        #webgl_info
+        {
+            height: 100%;
+            top:0px;
+            width:80%;
+            margin:10%;
+        }
+        #webgl_reserve_now
+        {
+            display:block;
+            width:80%;
+            margin:10%;
+            padding:5px;
+            text-align:center;
+            box-sizing:border-box;
+            text-transform: uppercase;
+            box-shadow: 0 0 1em 0em rgba(0,0,0,0.3);
+            color:rgb(250,250,250);
+            background-color:rgba(236,0,68,0.5);
+        }
+        #webgl_reserve_now:hover
+        {
+            cursor:pointer;
+        }
+        #container #shop_container
+        {
+            visibility: hidden;
+            height:1px;
+            width:1px;
+            overflow:hidden;
+        }
+        #kopa_webgl_cover{
+            position:absolute;
+            width:100%;
+            height:100%;
+            background-color:rgba(0,0,0,0.3);
+            z-index:100;
+            color:rgba(255, 255, 255, 0.80);
+            text-align:center;
+        }
+            #kopa_webgl_cover h3{
+                margin-top:3em;
+                font-size:3em;
+            }
+            #kopa_webgl_cover:hover{
+                cursor:pointer;
+                color:rgba(255, 255, 255, 0.60);
+                background-color:rgba(200,200,200,0.4);
+            }
+        #kopa_webgl
+        {
+            position:absolute;
+            z-index:0;
+            width:100%;
+            height:100%;
+        }
+
+            #shop_ui{
+                z-index:10;
+                position:absolute;
+                right:10px;
+                top:10px;
+            }
+                #shop_ui span{
+                    padding:10px;
+                    background-color:rgb(255,255,255,0.5);
+                    color:rgb(25,10,10);
+                }
+                #shop_ui span:hover{
+                    background-color:rgb(255,255,255,0.8);
+                    cursor:pointer;
+                }
+
+        #tooltip_anchor
+        {
+            font-family:'arial';
+            padding:7px 15px;
+            position:absolute;
+            min-width: 10vw;
+            min-height: 10vh;
+            z-index:1;
+            left:-9999px;
+            background-color:#fff;
+            border:2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 5px 5px 25px 0 #ddd;
+        }
+        #tooltip_singular
+        {
+            font-family:'arial';
+            padding:7px 15px;
+            position:absolute;
+            min-width: 10vw;
+            min-height: 2vh;
+            z-index:1;
+            left:-9999px;
+            background-color:#fff;
+            border:2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 5px 5px 25px 0 #ddd;
+        }
+        .smaller{
+            color:red;
+            font-weight:100;
+            line-height:1.2em;
+            margin-left:0.5em;
+        }
+        .smaller:hover{
+            cursor:pointer;
+        }
+        .tooltip_int{
+            font-weight:100;
+            line-height:1.2em;
+            margin-left:0.5em;
+        }
+        .tooltip_int.active{
+            font-weight:900;
+        }
+        .tooltip_int.hidden{
+            display:none;
+        }
+        .tooltip_int:hover{
+            cursor:default;
+            font-weight:900;
+        }
+        #trashcan
+        {
+            display:none
+        }
+        .colorEl{
+            min-width:1.5em;
+            min-height:1.5em;
+        }
+        .colorEl:hover{
+            cursor:pointer
+        }
