@@ -326,7 +326,7 @@ export class OnHoverControls{
                         colorEl.className = `colorEl`;
                         colorEl.style.backgroundColor = `#${color.toString(16)}`;
                         colorEl.style.setProperty('display','inline-block');
-                        colorEl.addEventListener('click',()=>this.sofaFactory.changeCushionColor( this.selectedSofa.cushion, color))
+                        colorEl.addEventListener('click',()=>this.sofaFactory.changeColorCushion( this.selectedSofa.cushion, color))
                         materialColorCusion.appendChild(colorEl)
                     });
                     rowEl.appendChild(materialColorCusion);

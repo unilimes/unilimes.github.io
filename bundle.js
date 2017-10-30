@@ -44345,7 +44345,7 @@ var OnHoverControls = /** @class */ (function () {
                             colorEl.className = "colorEl";
                             colorEl.style.backgroundColor = "#" + color.toString(16);
                             colorEl.style.setProperty('display', 'inline-block');
-                            colorEl.addEventListener('click', function () { return _this.sofaFactory.changeCushionColor(_this.selectedSofa.cushion, color); });
+                            colorEl.addEventListener('click', function () { return _this.sofaFactory.changeColorCushion(_this.selectedSofa.cushion, color); });
                             materialColorCusion_1.appendChild(colorEl);
                         });
                         rowEl.appendChild(materialColorCusion_1);
