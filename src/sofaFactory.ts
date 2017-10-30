@@ -151,7 +151,7 @@ export class SofaFactory {
             new Promise((resolve,reject)=>{
                 let textureLoader = new THREE.TextureLoader()
                 textureLoader.crossOrigin = ''
-                textureLoader.load(ROOT + "./blenderobj/SOFA/CHALK.jpg",(texture)=>{
+                textureLoader.load(ROOT + "./blenderobj/CUSHION/YELLOW.jpg",(texture)=>{
                     texture.wrapS = THREE.RepeatWrapping;
                     texture.wrapT = THREE.RepeatWrapping;
                     texture.repeat.set( TEXTURE_WRAPS, TEXTURE_WRAPT );
