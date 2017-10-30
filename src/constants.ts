@@ -52,7 +52,7 @@ export const MIRROR_COLOR = 0xa0a0a0
 // export const MIRROR_COLOR = 0x7D7D7D
 
 /* light */
-export const AMBIENT_INTENSITY = 0.3
+export const AMBIENT_INTENSITY = 0.
 export const SPOT_HEIGHT = 64
 
 export const RENDER_SPOT = false
@@ -66,7 +66,7 @@ export const SPOT_DECAY = 1
 
 /* root folder for loading assets */
 
-export const ROOT = 'https://unilimes.github.io.'
+export const ROOT = 'https://unilimes.github.io/'
 // export const ROOT = 'http://localhost/kopa2/'
 
 export const PRICE = {

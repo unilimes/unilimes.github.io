@@ -63,7 +63,7 @@ export class SofaFactory {
         Promise.all([
             new Promise((resolve,reject)=>{
                 let mainLoader = new THREE.JSONLoader()
-                mainLoader.load(ROOT + "./tree/master/blenderobj/sofa.json",(geometry)=>{
+                mainLoader.load(ROOT + "./blenderobj/sofa.json",(geometry)=>{
                     this.geometry = geometry
                     resolve()
                 },()=>{},(e)=>{
@@ -72,7 +72,7 @@ export class SofaFactory {
             }),
             new Promise((resolve,reject)=>{
                 let mainLoader = new THREE.JSONLoader()
-                mainLoader.load(ROOT + "./tree/master/blenderobj/arm.json",(geometry)=>{
+                mainLoader.load(ROOT + "./blenderobj/arm.json",(geometry)=>{
                     this.armrestGeometry = geometry
                     resolve()
                 },()=>{},(e)=>{
@@ -81,7 +81,7 @@ export class SofaFactory {
             }),
             new Promise((resolve,reject)=>{
                 let mainLoader = new THREE.JSONLoader()
-                mainLoader.load(ROOT + "./tree/master/blenderobj/backrest.json",(geometry)=>{
+                mainLoader.load(ROOT + "./blenderobj/backrest.json",(geometry)=>{
                     this.backsupportGeometry = geometry
                     resolve()
                 },()=>{},(e)=>{
@@ -90,7 +90,7 @@ export class SofaFactory {
             }),
             new Promise((resolve,reject)=>{
                 let mainLoader = new THREE.JSONLoader()
-                mainLoader.load(ROOT + "./tree/master/blenderobj/sofalegs.json",(geometry)=>{
+                mainLoader.load(ROOT + "./blenderobj/sofalegs.json",(geometry)=>{
                     this.sofaLegsGeometry = geometry
                     resolve()
                 },()=>{},(e)=>{
@@ -99,7 +99,7 @@ export class SofaFactory {
             }),
             new Promise((resolve,reject)=>{
                 let mainLoader = new THREE.JSONLoader()
-                mainLoader.load(ROOT + "./tree/master/blenderobj/armlegs.json",(geometry)=>{
+                mainLoader.load(ROOT + "./blenderobj/armlegs.json",(geometry)=>{
                     this.armrestLegsGeometry = geometry
                     resolve()
                 },()=>{},(e)=>{
@@ -117,7 +117,7 @@ export class SofaFactory {
             // }),
             new Promise((resolve,reject)=>{
                 let mainLoader = new THREE.JSONLoader()
-                mainLoader.load(ROOT + "./tree/master/blenderobj/backrestpins.json",(geometry)=>{
+                mainLoader.load(ROOT + "./blenderobj/backrestpins.json",(geometry)=>{
                     this.sofaPinsGeometry = geometry
                     resolve()
                 },()=>{},(e)=>{
@@ -126,7 +126,7 @@ export class SofaFactory {
             }),
             new Promise((resolve,reject)=>{
                 let mainLoader = new THREE.JSONLoader()
-                mainLoader.load(ROOT + "./tree/master/blenderobj/cushion.json",(geometry)=>{
+                mainLoader.load(ROOT + "./blenderobj/cushion.json",(geometry)=>{
                     geometry.computeVertexNormals()
                     this.cushionGeometry = geometry
                     resolve()
@@ -137,7 +137,7 @@ export class SofaFactory {
             new Promise((resolve,reject)=>{
                 let textureLoader = new THREE.TextureLoader()
                 textureLoader.crossOrigin = ''
-                textureLoader.load(ROOT + "./tree/master/blenderobj/SOFA/CHALK.jpg",(texture)=>{
+                textureLoader.load(ROOT + "./blenderobj/SOFA/CHALK.jpg",(texture)=>{
                 // textureLoader.load(ROOT + "./blenderobj/SOFA/CHALK.jpg",(texture)=>{
                     texture.wrapS = THREE.RepeatWrapping;
                     texture.wrapT = THREE.RepeatWrapping;
@@ -151,7 +151,7 @@ export class SofaFactory {
             new Promise((resolve,reject)=>{
                 let textureLoader = new THREE.TextureLoader()
                 textureLoader.crossOrigin = ''
-                textureLoader.load(ROOT + "./tree/master/blenderobj/normal.jpg",(texture)=>{
+                textureLoader.load(ROOT + "./blenderobj/normal.jpg",(texture)=>{
                     texture.wrapS = THREE.RepeatWrapping;
                     texture.wrapT = THREE.RepeatWrapping;
                     texture.repeat.set( TEXTURE_WRAPS, TEXTURE_WRAPT );
