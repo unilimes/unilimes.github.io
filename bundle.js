@@ -45800,7 +45800,7 @@ var SofaFactory = /** @class */ (function () {
             new Promise(function (resolve, reject) {
                 var textureLoader = new THREE.TextureLoader();
                 textureLoader.crossOrigin = '';
-                textureLoader.load(constants_1.ROOT + "./blenderobj/normal.jpg", function (texture) {
+                textureLoader.load(constants_1.ROOT + "./blenderobj/SOFA/CHALK.jpg", function (texture) {
                     texture.wrapS = THREE.RepeatWrapping;
                     texture.wrapT = THREE.RepeatWrapping;
                     texture.repeat.set(constants_1.TEXTURE_WRAPS, constants_1.TEXTURE_WRAPT);
