@@ -4,7 +4,7 @@ import { Scene } from "./scene"
 import { SofaFactory } from "./sofaFactory"
 import { Sofa } from "./sofaModel"
 import { ModifySofaDialog } from "./modSofa"
-import { SCALE,PRICE,SOFAHEIGHT, SOFAWIDTH,HIGHLIGHT_COLOR2,CHARCOALBLACK,CHALK, WHITE,BLACK,BLUE,PINK,BROWN,CHARCOAL,NAVY,BEIGE,LIGHTGRAY,NODESIZE } from "./constants"
+import { BLACK_CUSION,BLUE_CUSION,LIGHTGRAY_CUSION,PURPLE_CUSION,YELLOW_CUSION,SCALE,PRICE,SOFAHEIGHT, SOFAWIDTH,HIGHLIGHT_COLOR2,CHARCOALBLACK,CHALK, WHITE,BLACK,BLUE,PINK,BROWN,CHARCOAL,NAVY,BEIGE,LIGHTGRAY,NODESIZE } from "./constants"
 
 let orbitControls = OrbitControls( THREE )
 
@@ -298,7 +298,12 @@ export class OnHoverControls{
                     /* adding menu options to change colours */
                     let rowEl = document.createElement('div')
 
-                    let materialColor = document.createElement('span')
+                    console.log('AHAHAHAHAH ', this );
+
+                    let materialColor = document.createElement('span');
+                    let materialColorSeparator = document.createElement('span');
+                    materialColorSeparator.innerHTML = ' | ';
+                    let materialColorCusion = document.createElement('span');
                     // materialColor.innerHTML = 'chnage color'//this.selectedSofa[this.selectedSide].constructor.name
                     
                     let colors = [CHALK,LIGHTGRAY,BEIGE,BLUE,CHARCOALBLACK]
@@ -307,10 +312,24 @@ export class OnHoverControls{
                         colorEl.className = `colorEl`
                         colorEl.style.backgroundColor = `#${color.toString(16)}`
                         colorEl.style.setProperty('display','inline-block')
-                        colorEl.addEventListener('click',()=>this.sofaFactory.changeColor(this.selectedSofa,color))
+                        colorEl.addEventListener('click',()=>this.sofaFactory.changeColor( this.selectedSofa, color ))
                         materialColor.appendChild(colorEl)
-                    })
-                    rowEl.appendChild(materialColor)
+                    });
+
+                    rowEl.appendChild(materialColor);
+                    
+                    rowEl.appendChild(materialColorSeparator);
+                    
+                    let colorCusion = [BLACK_CUSION,BLUE_CUSION,LIGHTGRAY_CUSION,PURPLE_CUSION,YELLOW_CUSION];
+                    colorCusion.forEach(color=>{
+                        let colorEl = document.createElement('span');
+                        colorEl.className = `colorEl`;
+                        colorEl.style.backgroundColor = `#${color.toString(16)}`;
+                        colorEl.style.setProperty('display','inline-block');
+                        colorEl.addEventListener('click',()=>this.sofaFactory.changeCushionColor( this.selectedSofa.cushion, color))
+                        materialColorCusion.appendChild(colorEl)
+                    });
+                    rowEl.appendChild(materialColorCusion);
 
                     /* adding menu option to add/remove cushion */
                     let accNameAddCushionArray = []
@@ -320,7 +339,7 @@ export class OnHoverControls{
                             accNameAddCushion.innerHTML = `remove Cushion`
                             accNameAddCushion.className = `smaller`
                             accNameAddCushion.addEventListener('click',()=>{
-                                this.sofaFactory.remove(this.selectedSofa,'cushion')
+                                this.sofaFactory.remove( this.selectedSofa,'cushion' )
                                 this.dismissTooltip()
                             })
                             accNameAddCushionArray.push( accNameAddCushion )

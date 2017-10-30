@@ -33,6 +33,13 @@ export const NAVY = 0x343b55
 export const LIGHTGRAY_ = 0x848484
 export const BEIGE_ = 0x897d6d
 
+// Cusion color
+export const BLACK_CUSION = 0x2d2d2d
+export const BLUE_CUSION = 0x1e2c55
+export const LIGHTGRAY_CUSION = 0x7b7b7b
+export const PURPLE_CUSION = 0x624971
+export const YELLOW_CUSION = 0xad9d4f
+
 export const TEXTURE_WRAPS = 2
 export const TEXTURE_WRAPT = 2
 

@@ -9,23 +9,4 @@
     <annotation-enable>false</annotation-enable>
     <other-services-enabled>true</other-services-enabled>
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>File Watchers</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>TaskProblemsInspection</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
 </project>

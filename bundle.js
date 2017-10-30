@@ -43783,6 +43783,12 @@ exports.CHARCOAL = 0x514d4a;
 exports.NAVY = 0x343b55;
 exports.LIGHTGRAY_ = 0x848484;
 exports.BEIGE_ = 0x897d6d;
+// Cusion color
+exports.BLACK_CUSION = 0x2d2d2d;
+exports.BLUE_CUSION = 0x1e2c55;
+exports.LIGHTGRAY_CUSION = 0x7b7b7b;
+exports.PURPLE_CUSION = 0x624971;
+exports.YELLOW_CUSION = 0xad9d4f;
 exports.TEXTURE_WRAPS = 2;
 exports.TEXTURE_WRAPT = 2;
 exports.TEXTURE_BUMP = 0.1;
@@ -44316,7 +44322,11 @@ var OnHoverControls = /** @class */ (function () {
                     {
                         /* adding menu options to change colours */
                         var rowEl = document.createElement('div');
+                        console.log('AHAHAHAHAH ', this);
                         var materialColor_1 = document.createElement('span');
+                        var materialColorSeparator = document.createElement('span');
+                        materialColorSeparator.innerHTML = ' | ';
+                        var materialColorCusion_1 = document.createElement('span');
                         // materialColor.innerHTML = 'chnage color'//this.selectedSofa[this.selectedSide].constructor.name
                         var colors = [constants_1.CHALK, constants_1.LIGHTGRAY, constants_1.BEIGE, constants_1.BLUE, constants_1.CHARCOALBLACK];
                         colors.forEach(function (color) {
@@ -44328,6 +44338,17 @@ var OnHoverControls = /** @class */ (function () {
                             materialColor_1.appendChild(colorEl);
                         });
                         rowEl.appendChild(materialColor_1);
+                        rowEl.appendChild(materialColorSeparator);
+                        var colorCusion = [constants_1.BLACK_CUSION, constants_1.BLUE_CUSION, constants_1.LIGHTGRAY_CUSION, constants_1.PURPLE_CUSION, constants_1.YELLOW_CUSION];
+                        colorCusion.forEach(function (color) {
+                            var colorEl = document.createElement('span');
+                            colorEl.className = "colorEl";
+                            colorEl.style.backgroundColor = "#" + color.toString(16);
+                            colorEl.style.setProperty('display', 'inline-block');
+                            colorEl.addEventListener('click', function () { return _this.sofaFactory.changeCushionColor(_this.selectedSofa.cushion, color); });
+                            materialColorCusion_1.appendChild(colorEl);
+                        });
+                        rowEl.appendChild(materialColorCusion_1);
                         /* adding menu option to add/remove cushion */
                         var accNameAddCushionArray = [];
                         if (this.selectedSofa.hasBackRest() != 0) {
@@ -45787,7 +45808,6 @@ var SofaFactory = /** @class */ (function () {
                 var textureLoader = new THREE.TextureLoader();
                 textureLoader.crossOrigin = '';
                 textureLoader.load(constants_1.ROOT + "./blenderobj/SOFA/CHALK.jpg", function (texture) {
-                    // textureLoader.load(ROOT + "./blenderobj/SOFA/CHALK.jpg",(texture)=>{
                     texture.wrapS = THREE.RepeatWrapping;
                     texture.wrapT = THREE.RepeatWrapping;
                     texture.repeat.set(constants_1.TEXTURE_WRAPS, constants_1.TEXTURE_WRAPT);
@@ -45995,8 +46015,16 @@ var SofaFactory = /** @class */ (function () {
         }
     };
     SofaFactory.prototype.changeColor = function (sofa, color) {
-        var material = sofa.material;
-        material.color.setHex(color);
+        if (sofa) {
+            var material = sofa.material;
+            material.color.setHex(color);
+        }
+    };
+    SofaFactory.prototype.changeColorCushion = function (cushion, color) {
+        if (cushion) {
+            var material = cushion.meshes[0].material;
+            material.color.setHex(color);
+        }
     };
     /* remove acc /sofa from view */
     SofaFactory.prototype.remove = function (sofa, position) {
@@ -46161,7 +46189,7 @@ var Cushion = /** @class */ (function (_super) {
     function Cushion(sofa, geometry) {
         var _this = _super.call(this, sofa) || this;
         _this.geometry = geometry;
-        _this.meshes = [new THREE.Mesh(_this.geometry, _this.material)];
+        _this.meshes = [new THREE.Mesh(_this.geometry, _this.material.clone())];
         return _this;
     }
     Cushion.prototype.clone = function (sofa) {

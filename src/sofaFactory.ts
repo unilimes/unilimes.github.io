@@ -125,12 +125,12 @@ export class SofaFactory {
                 })
             }),
             new Promise((resolve,reject)=>{
-                let mainLoader = new THREE.JSONLoader()
-                mainLoader.load(ROOT + "./blenderobj/cushion.json",(geometry)=>{
-                    geometry.computeVertexNormals()
-                    this.cushionGeometry = geometry
-                    resolve()
-                },()=>{},(e)=>{
+                    let mainLoader = new THREE.JSONLoader()
+                    mainLoader.load(ROOT + "./blenderobj/cushion.json",(geometry)=>{
+                        geometry.computeVertexNormals()
+                        this.cushionGeometry = geometry
+                        resolve()
+                    },()=>{},(e)=>{
                     reject(e.message)
                 })
             }),
@@ -138,7 +138,6 @@ export class SofaFactory {
                 let textureLoader = new THREE.TextureLoader()
                 textureLoader.crossOrigin = ''
                 textureLoader.load(ROOT + "./blenderobj/SOFA/CHALK.jpg",(texture)=>{
-                // textureLoader.load(ROOT + "./blenderobj/SOFA/CHALK.jpg",(texture)=>{
                     texture.wrapS = THREE.RepeatWrapping;
                     texture.wrapT = THREE.RepeatWrapping;
                     texture.repeat.set( TEXTURE_WRAPS, TEXTURE_WRAPT );
@@ -199,7 +198,6 @@ export class SofaFactory {
         //     this.backsupportGeometry = geometry
         // })
     }
-
 
     makeANewSofa(sofa?:Sofa,position?:string):Sofa{
         if( sofa ){
@@ -267,10 +265,10 @@ export class SofaFactory {
     }
 
     addCushion(sofa:Sofa){
-        sofa.cushion = new Cushion(sofa,this.cushionGeometry)
+        sofa.cushion = new Cushion(sofa,this.cushionGeometry);
         sofa.cushion.meshes.forEach(mesh=>{
-            mesh.castShadow = true
-            sofa.meshes[0].add( mesh )
+            mesh.castShadow = true;
+            sofa.meshes[0].add( mesh );
         })
     }
 
@@ -342,8 +340,17 @@ export class SofaFactory {
     }
 
     changeColor(sofa:Sofa,color:number){
-        let material : any = sofa.material
-        material.color.setHex(color)
+        if( sofa ){
+            let material : any = sofa.material;
+            material.color.setHex(color)
+        }
+    }
+
+    changeColorCushion( cushion:Cushion, color:number){
+        if( cushion ){
+            let material : any = cushion.meshes[0].material;
+            material.color.setHex(color)
+        }
     }
 
     /* remove acc /sofa from view */

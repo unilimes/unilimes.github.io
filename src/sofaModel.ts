@@ -134,8 +134,9 @@ export class Cushion extends SofaAddon{
     constructor( sofa:Sofa,geometry:THREE.Geometry ){
         super( sofa )
         this.geometry = geometry
-        this.meshes = [new THREE.Mesh( this.geometry,this.material )]
+        this.meshes = [new THREE.Mesh( this.geometry, this.material.clone() )]
     }
+
     clone(sofa:Sofa):Cushion{
         return new Cushion(sofa,this.geometry.clone())
     }
