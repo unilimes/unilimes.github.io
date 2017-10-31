@@ -177,11 +177,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // }
             console.log(temp[2].className);
             temp = document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0']");
-            console.log('!!!!!',temp.length);
-            for (let i = 0; i>=temp.length; i++) {
+            console.log('!!!!!', temp.length);
+            for (let i = 0; i >= 5; i++) {
                 console.log(temp[i].className, i);
             }
-            console.log('!!!!!',temp);
+            console.log('!!!!!', temp);
 
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');

@@ -45695,7 +45695,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(temp[2].className);
             temp = document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0']");
             console.log('!!!!!', temp.length);
-            for (var i = 0; i >= temp.length; i++) {
+            for (var i = 0; i >= 5; i++) {
                 console.log(temp[i].className, i);
             }
             console.log('!!!!!', temp);
