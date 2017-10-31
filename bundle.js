@@ -45694,7 +45694,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // }
             console.log(temp[2].className);
             temp = document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0']");
-            for (var i in temp) {
+            for (var i = 0; i >= temp.length; i++) {
                 if (temp[i].className == 'sqs-add-to-cart-button-wrapper') {
                     console.log('in');
                 }
