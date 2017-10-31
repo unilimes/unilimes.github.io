@@ -45694,13 +45694,11 @@ document.addEventListener('DOMContentLoaded', function () {
             // }
             console.log(temp[2].className);
             temp = document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0']");
+            console.log('!!!!!', temp.length);
             for (var i = 0; i >= temp.length; i++) {
-                if (temp[i].className == 'sqs-add-to-cart-button-wrapper') {
-                    console.log('in');
-                }
-                console.log('each');
+                temp[i].className;
             }
-            console.log(temp);
+            console.log('!!!!!', temp);
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');
             // document.body.appendChild(anchor);
