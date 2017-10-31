@@ -150,17 +150,15 @@ document.addEventListener('DOMContentLoaded',()=>{
             (<HTMLInputElement>document.getElementById('webgl_sqsp_back')).value = window['kopa_tally'].back;
             (<HTMLInputElement>document.getElementById('webgl_sqsp_cushion')).value = window['kopa_tally'].cushion;
 
-            console.log(window['kopa_tally']);
-
             document.getElementById('webgl_sqsp_add_sofa').click();
             document.getElementById('webgl_sqsp_add_arm').click();
             document.getElementById('webgl_sqsp_add_back').click();
             document.getElementById('webgl_sqsp_add_cushion').click();
 
-            const anchor = document.createElement('a');
-            anchor.setAttribute('href','/cart');
-            document.body.appendChild(anchor);
-            anchor.click();
+            // const anchor = document.createElement('a');
+            // anchor.setAttribute('href','/cart');
+            // document.body.appendChild(anchor);
+            // anchor.click();
             console.log(window['kopa_tally']);
         });
         document.getElementById('webgl_control_zoomIn').addEventListener('click',()=>{
