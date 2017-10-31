@@ -298,11 +298,10 @@ export class OnHoverControls{
                     /* adding menu options to change colours */
                     let rowEl = document.createElement('div');
 
-                    console.log('AHAHAHAHAH ', this );
-
-                    let materialColor = document.createElement('span');
-                    let materialColorSeparator = document.createElement('span');
-                    materialColorSeparator.innerHTML = ' | ';
+                    let materialColor = document.createElement('div');
+                    materialColor.innerHTML = ' Sofa color ';
+                    let materialColorSeparator = document.createElement('div');
+                    materialColorSeparator.innerHTML = ' Cushion color ';
                     let materialColorCusion = document.createElement('span');
                     // materialColor.innerHTML = 'chnage color'//this.selectedSofa[this.selectedSide].constructor.name
                     

@@ -44322,10 +44322,10 @@ var OnHoverControls = /** @class */ (function () {
                     {
                         /* adding menu options to change colours */
                         var rowEl = document.createElement('div');
-                        console.log('AHAHAHAHAH ', this);
-                        var materialColor_1 = document.createElement('span');
-                        var materialColorSeparator = document.createElement('span');
-                        materialColorSeparator.innerHTML = ' | ';
+                        var materialColor_1 = document.createElement('div');
+                        materialColor_1.innerHTML = ' Sofa color ';
+                        var materialColorSeparator = document.createElement('div');
+                        materialColorSeparator.innerHTML = ' Cushion color ';
                         var materialColorCusion_1 = document.createElement('span');
                         // materialColor.innerHTML = 'chnage color'//this.selectedSofa[this.selectedSide].constructor.name
                         var colors = [constants_1.CHALK, constants_1.LIGHTGRAY, constants_1.BEIGE, constants_1.BLUE, constants_1.CHARCOALBLACK];
