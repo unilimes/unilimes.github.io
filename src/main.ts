@@ -161,21 +161,21 @@ document.addEventListener('DOMContentLoaded', () => {
             //         i.click();
             //     }
             // }
-            console.log(temp);
+            console.log(temp[0]);
             temp = document.querySelectorAll("[data-item-id='59f71720e4966b0784e6c27a']");
             // for (let i of temp) {
             //     if (i.className == 'sqs-add-to-cart-button-wrapper') {
             //         i.click();
             //     }
             // }
-            console.log(temp);
+            console.log(temp[1]);
             temp = document.querySelectorAll("[data-item-id='59f717f48e7b0f7a605aede2']");
             // for (let i of temp) {
             //     if (i.className == 'sqs-add-to-cart-button-wrapper') {
             //         i.click();
             //     }
             // }
-            console.log(temp);
+            console.log(temp[2].className);
             temp = document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0']");
             // for (let i of temp) {
             //     if (i.className == 'sqs-add-to-cart-button-wrapper') {
