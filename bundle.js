@@ -45668,10 +45668,10 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('webgl_sqsp_arm').value = window['kopa_tally'].arm;
             document.getElementById('webgl_sqsp_back').value = window['kopa_tally'].back;
             document.getElementById('webgl_sqsp_cushion').value = window['kopa_tally'].cushion;
-            document.getElementById('webgl_sqsp_add_sofa').click();
-            document.getElementById('webgl_sqsp_add_arm').click();
-            document.getElementById('webgl_sqsp_add_back').click();
-            document.getElementById('webgl_sqsp_add_cushion').click();
+            document.getElementById('yui_3_17_2_1_1509465362097_149').click();
+            document.getElementById('yui_3_17_2_1_1509465131860_150').click();
+            document.getElementById('yui_3_17_2_1_1509463894459_149').click();
+            document.getElementById('yui_3_17_2_1_1509460743525_149').click();
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');
             // document.body.appendChild(anchor);
