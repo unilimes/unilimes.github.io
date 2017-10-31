@@ -153,7 +153,12 @@ document.addEventListener('DOMContentLoaded',()=>{
             document.getElementById('yui_3_17_2_1_1509465362097_149').click();
             document.getElementById('yui_3_17_2_1_1509465131860_150').click();
             document.getElementById('yui_3_17_2_1_1509463894459_149').click();
-            document.getElementById('yui_3_17_2_1_1509460743525_291').click();
+            document.getElementById('yui_3_17_2_1_1509460743525_149').click();
+
+            console.log(document.querySelectorAll("[data-item-id='59f71658f9619ab1fccccdd5']"));
+            console.log(document.querySelectorAll("[data-item-id='59f71720e4966b0784e6c27a']"));
+            console.log(document.querySelectorAll("[data-item-id='59f717f48e7b0f7a605aede2']"));
+            console.log(document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0']"));
 
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');
