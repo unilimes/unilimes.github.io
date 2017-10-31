@@ -45671,7 +45671,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('yui_3_17_2_1_1509465362097_149').click();
             document.getElementById('yui_3_17_2_1_1509465131860_150').click();
             document.getElementById('yui_3_17_2_1_1509463894459_149').click();
-            document.getElementById('yui_3_17_2_1_1509460743525_149').click();
+            document.getElementById('yui_3_17_2_1_1509460743525_291').click();
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');
             // document.body.appendChild(anchor);
