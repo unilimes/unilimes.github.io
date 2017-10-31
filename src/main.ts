@@ -150,10 +150,10 @@ document.addEventListener('DOMContentLoaded', () => {
             (<HTMLInputElement>document.getElementById('webgl_sqsp_back')).value = window['kopa_tally'].back;
             (<HTMLInputElement>document.getElementById('webgl_sqsp_cushion')).value = window['kopa_tally'].cushion;
 
-            // document.getElementById('yui_3_17_2_1_1509465362097_149').click();
-            // document.getElementById('yui_3_17_2_1_1509465131860_150').click();
-            // document.getElementById('yui_3_17_2_1_1509463894459_149').click();
-            // document.getElementById('yui_3_17_2_1_1509460743525_149').click();
+            document.getElementById('yui_3_17_2_1_1509465362097_149').click();
+            document.getElementById('yui_3_17_2_1_1509465131860_150').click();
+            document.getElementById('yui_3_17_2_1_1509463894459_149').click();
+            document.getElementById('yui_3_17_2_1_1509460743525_149').click();
 
             let temp = document.querySelectorAll("[data-item-id='59f71658f9619ab1fccccdd5']");
             // for (let i of temp) {
@@ -178,8 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(temp[2].className);
             temp = document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0']");
             console.log('!!!!!', temp.length);
-            for (let i = 0; i >= 5; i++) {
-                console.log(temp[i].className, i);
+            for (let i = 0; i <= temp.length; i++) {
+                console.log(temp[i].className == 'sqs-add-to-cart-button-wrapper');
             }
             console.log('!!!!!', temp);
 
