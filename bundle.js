@@ -45668,14 +45668,38 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('webgl_sqsp_arm').value = window['kopa_tally'].arm;
             document.getElementById('webgl_sqsp_back').value = window['kopa_tally'].back;
             document.getElementById('webgl_sqsp_cushion').value = window['kopa_tally'].cushion;
-            document.getElementById('yui_3_17_2_1_1509465362097_149').click();
-            document.getElementById('yui_3_17_2_1_1509465131860_150').click();
-            document.getElementById('yui_3_17_2_1_1509463894459_149').click();
-            document.getElementById('yui_3_17_2_1_1509460743525_149').click();
-            console.log(document.querySelectorAll("[data-item-id='59f71658f9619ab1fccccdd5']"));
-            console.log(document.querySelectorAll("[data-item-id='59f71720e4966b0784e6c27a']"));
-            console.log(document.querySelectorAll("[data-item-id='59f717f48e7b0f7a605aede2']"));
-            console.log(document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0']"));
+            // document.getElementById('yui_3_17_2_1_1509465362097_149').click();
+            // document.getElementById('yui_3_17_2_1_1509465131860_150').click();
+            // document.getElementById('yui_3_17_2_1_1509463894459_149').click();
+            // document.getElementById('yui_3_17_2_1_1509460743525_149').click();
+            var temp = document.querySelectorAll("[data-item-id='59f71658f9619ab1fccccdd5']");
+            // for (let i of temp) {
+            //     if (i.className == 'sqs-add-to-cart-button-wrapper') {
+            //         i.click();
+            //     }
+            // }
+            console.log(temp);
+            temp = document.querySelectorAll("[data-item-id='59f71720e4966b0784e6c27a']");
+            // for (let i of temp) {
+            //     if (i.className == 'sqs-add-to-cart-button-wrapper') {
+            //         i.click();
+            //     }
+            // }
+            console.log(temp);
+            temp = document.querySelectorAll("[data-item-id='59f717f48e7b0f7a605aede2']");
+            // for (let i of temp) {
+            //     if (i.className == 'sqs-add-to-cart-button-wrapper') {
+            //         i.click();
+            //     }
+            // }
+            console.log(temp);
+            temp = document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0']");
+            // for (let i of temp) {
+            //     if (i.className == 'sqs-add-to-cart-button-wrapper') {
+            //         i.click();
+            //     }
+            // }
+            console.log(temp);
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');
             // document.body.appendChild(anchor);
