@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
             temp = document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0']");
             console.log('!!!!!',temp.length);
             for (let i = 0; i>=temp.length; i++) {
-                temp[i].className
+                console.log(temp[i].className);
             }
             console.log('!!!!!',temp);
 
