@@ -1,4 +1,5 @@
 import {Scene} from './scene'
+import $ from "jquery";
 import * as THREE from "three"
 import {Util, OnHoverControls} from "./util"
 import {ModifySofaDialog} from "./modSofa"
@@ -152,6 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             console.log(document.getElementsByClassName('sofa_add_cart'));
             console.log(document.getElementsByClassName('sofa_add_cart')[0]);
+
+            $('.sofa_add_cart').click();
+            $('.arm_add_cart').click();
+            $('.back_add_cart').click();
+            $('.cusion_add_cart').click();
 
             // document.getElementsByClassName('sofa_add_cart')[0].click();
             // document.getElementsByClassName('arm_add_cart')[0].click();
