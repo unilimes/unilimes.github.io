@@ -22,17 +22,17 @@ export class KopaViewer {
         this.canvas = canvas;
 
         /* setting up the renderer */
-        this.renderer = new THREE.WebGLRenderer();
-        this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
-        this.renderer.setClearColor(RENDERER_COLOR);
-        this.canvas.appendChild(this.renderer.domElement);
+        this.renderer = new THREE.WebGLRenderer()
+        this.renderer.setSize( this.canvas.clientWidth, this.canvas.clientHeight )
+        this.renderer.setClearColor(RENDERER_COLOR)
+        this.canvas.appendChild( this.renderer.domElement )
 
         /* setting up the scene + units */
         this.scene = new Scene(this.renderer);
 
         /* util deals with drag controls and highlighting */
-        this.util = new Util(this.scene.camera, this.renderer.domElement);
-        this.modSofa = new ModifySofaDialog(this.scene.sofaFactory);
+        this.util = new Util(this.scene.camera, this.renderer.domElement)
+        this.modSofa = new ModifySofaDialog( this.scene.sofaFactory )
 
         this.canvas.addEventListener('mousemove', (e) => this.util.mouseMoveEvent(this.canvas, e), false);
         this.canvas.addEventListener('click', (e) => this.onHoverControls.mouseClickEvent(this.canvas, e, this.modSofa), false);
