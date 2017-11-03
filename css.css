@@ -15,8 +15,54 @@
         }
         #webgl_control
         {
-            margin-left:10%;
-            padding-top:20px
+            padding: 15px 0 0 10px;
+            border-bottom: 1px solid #b1aeae;
+        }
+        .zoom_btn_wrap{
+            display: inline-block;
+            margin-left: 40px;
+        }
+        .countSofa{
+            float: left;
+            width: 18%;
+            border-right: 1px solid #b1aeae;
+        }
+        .nameCount{
+            margin-left: 18px;
+            /* float: left; */
+            display: inline-block;
+        }
+        .zoomStyle, .nameCount, .countSofa, .blockDimantion, .totalStyle{
+            font-size: 16px;color: black;font-weight: bold;
+        }
+        .nameCount,.countSofa{
+            line-height: 2;
+        }
+        .zoomStyle{
+            font-size: 18px;
+            margin-left: 5px;
+        }
+        .fontPrice{
+            font-size: 24px;color: black;font-weight: 500;
+        }
+        .totalStyle{
+            position: relative;
+            top: -6px;
+        }
+        .dimamtionStyle{
+            font-size: 13px;
+        }
+        .totalWrap{
+            position: absolute;
+            top: 71%;
+            right: 19px;
+        }
+        .blockDimantion{
+            text-align: center;
+            border-top: 1px solid #b1aeae;
+            border-bottom: 1px solid #b1aeae;
+            margin: 19px 0 21px 0;
+            padding: 5px 0 5px 0;
         }
         #webgl_hidden_bar
         {
@@ -24,8 +70,8 @@
         }
         #webgl_control_zoomIn img,#webgl_control_zoomOut img
         {
-            width: 20px;
-            height: 20px;
+            width: 35px;
+            height: 35px;
         }
         #webgl_control_zoomIn:hover,#webgl_control_zoomOut:hover
         {
@@ -33,14 +79,16 @@
         }
         #webgl_overlay_footer
         {
-            background-color:rgba(200,200,200,0.4);
-            display:block;
-            width:200px;
+            background-color: rgba(255,255,255,0.4);
+            display: block;
+            width: 200px;
             min-height: 100px;
-            overflow:hidden;
+            overflow: hidden;
             position: absolute;
-            bottom:2%;
-            right:2%;
+            bottom: 2%;
+            border: 1px solid #000000;
+            border-radius: 15px;
+            right: 2%;
             visibility: hidden;
         }
         #webgl_info
@@ -61,7 +109,9 @@
             text-transform: uppercase;
             box-shadow: 0 0 1em 0em rgba(0,0,0,0.3);
             color:rgb(250,250,250);
-            background-color:rgba(236,0,68,0.5);
+            background-color: rgba(236, 0, 0, 0.5);
+            border: 1px solid black;
+            border-radius: 16px;
         }
         #webgl_reserve_now:hover
         {
@@ -108,11 +158,11 @@
             }
                 #shop_ui span{
                     padding:10px;
-                    background-color:rgb(255,255,255,0.5);
+                    background-color:rgba(255,255,255,0.5);
                     color:rgb(25,10,10);
                 }
                 #shop_ui span:hover{
-                    background-color:rgb(255,255,255,0.8);
+                    background-color:rgba(255,255,255,0.8);
                     cursor:pointer;
                 }
 

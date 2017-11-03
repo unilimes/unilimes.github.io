@@ -447,10 +447,20 @@ window['kopa_tally'] = {
     cushion:cushionTally
 };
         let priceTally = `
-Price Tally:<br />
-Sofa x ${sofaTally}, Armrest x ${armTally}, Backrest x ${backTally}, Cushion x ${cushionTally} <br />
-totally $${sofaTally*PRICE.SOFA + armTally*PRICE.ARMREST + backTally*PRICE.BACKREST + cushionTally * PRICE.CUSHION}<br /><br />
-        `;
+<div class="countSofa">${sofaTally}<br />
+    ${backTally}<br />
+    ${armTally}<br />
+    ${cushionTally}<br /></div> 
+    <div class="nameCount"> SEAT <br />
+     BACKREST <br />
+     ARMREST <br />
+     CUSHION <br /> </div>
+    <br />
+    <div class="totalWrap">
+        <span class="totalStyle">TOTAL</span> 
+        <span class="fontPrice">$${sofaTally*PRICE.SOFA + armTally*PRICE.ARMREST + backTally*PRICE.BACKREST + cushionTally * PRICE.CUSHION}</span> 
+    </div>
+       `;
         
         let boundingBox = new THREE.Box3().setFromObject(this.sofaFactory.sofaLedger[0].meshes[0]);
         let width = Math.round((boundingBox.max.x - boundingBox.min.x) * SCALE);
@@ -458,8 +468,10 @@ totally $${sofaTally*PRICE.SOFA + armTally*PRICE.ARMREST + backTally*PRICE.BACKR
         let depth = Math.round((boundingBox.max.z - boundingBox.min.z) * SCALE);
 
         let dimension = `
-Estimated dimension: (cm) <br />
-${width} x ${depth} x ${height}
+            <div class="blockDimantion">
+                <span class="dimamtionStyle">DIMENTION (cm)</span> <br />
+                ${width} x ${depth} x ${height}
+            </div>
         `;
         let pricePanel = document.getElementById('webgl_info');
         pricePanel.innerHTML = priceTally + dimension

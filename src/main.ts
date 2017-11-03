@@ -150,9 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
             (<HTMLInputElement>document.getElementById('webgl_sqsp_back')).value = window['kopa_tally'].back;
             (<HTMLInputElement>document.getElementById('webgl_sqsp_cushion')).value = window['kopa_tally'].cushion;
 
-            console.log(document.getElementsByClassName('sofa_add_cart'));
-            console.log(document.getElementsByClassName('sofa_add_cart')[0]);
-
             document.getElementById('sofa_add_cart').click();
             document.getElementById('arm_add_cart').click();
             document.getElementById('back_add_cart').click();
@@ -187,7 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
             //         $(temp[i]).click();
             //     }
             // }
-            // console.log('!!!!!', temp);
 
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');

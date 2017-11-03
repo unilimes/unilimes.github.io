@@ -44465,12 +44465,12 @@ var OnHoverControls = /** @class */ (function () {
             back: backTally,
             cushion: cushionTally
         };
-        var priceTally = "\nPrice Tally:<br />\nSofa x " + sofaTally + ", Armrest x " + armTally + ", Backrest x " + backTally + ", Cushion x " + cushionTally + " <br />\ntotally $" + (sofaTally * constants_1.PRICE.SOFA + armTally * constants_1.PRICE.ARMREST + backTally * constants_1.PRICE.BACKREST + cushionTally * constants_1.PRICE.CUSHION) + "<br /><br />\n        ";
+        var priceTally = "\n<div class=\"countSofa\">" + sofaTally + "<br />\n    " + backTally + "<br />\n    " + armTally + "<br />\n    " + cushionTally + "<br /></div> \n    <div class=\"nameCount\"> SEAT <br />\n     BACKREST <br />\n     ARMREST <br />\n     CUSHION <br /> </div>\n    <br />\n    <div class=\"totalWrap\">\n        <span class=\"totalStyle\">TOTAL</span> \n        <span class=\"fontPrice\">$" + (sofaTally * constants_1.PRICE.SOFA + armTally * constants_1.PRICE.ARMREST + backTally * constants_1.PRICE.BACKREST + cushionTally * constants_1.PRICE.CUSHION) + "</span> \n    </div>\n       ";
         var boundingBox = new THREE.Box3().setFromObject(this.sofaFactory.sofaLedger[0].meshes[0]);
         var width = Math.round((boundingBox.max.x - boundingBox.min.x) * constants_1.SCALE);
         var height = Math.round((boundingBox.max.y - boundingBox.min.y) * constants_1.SCALE);
         var depth = Math.round((boundingBox.max.z - boundingBox.min.z) * constants_1.SCALE);
-        var dimension = "\nEstimated dimension: (cm) <br />\n" + width + " x " + depth + " x " + height + "\n        ";
+        var dimension = "\n            <div class=\"blockDimantion\">\n                <span class=\"dimamtionStyle\">DIMENTION (cm)</span> <br />\n                " + width + " x " + depth + " x " + height + "\n            </div>\n        ";
         var pricePanel = document.getElementById('webgl_info');
         pricePanel.innerHTML = priceTally + dimension;
     };
@@ -45668,8 +45668,6 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('webgl_sqsp_arm').value = window['kopa_tally'].arm;
             document.getElementById('webgl_sqsp_back').value = window['kopa_tally'].back;
             document.getElementById('webgl_sqsp_cushion').value = window['kopa_tally'].cushion;
-            console.log(document.getElementsByClassName('sofa_add_cart'));
-            console.log(document.getElementsByClassName('sofa_add_cart')[0]);
             document.getElementById('sofa_add_cart').click();
             document.getElementById('arm_add_cart').click();
             document.getElementById('back_add_cart').click();
@@ -45703,7 +45701,6 @@ document.addEventListener('DOMContentLoaded', function () {
             //         $(temp[i]).click();
             //     }
             // }
-            // console.log('!!!!!', temp);
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');
             // document.body.appendChild(anchor);
