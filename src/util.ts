@@ -24,7 +24,8 @@ export class Util{
         this.control.autoRotate = false;
         this.control.maxDistance = 180;
         this.control.minDistance = 1;
-        
+        this.control.maxPolarAngle = Math.PI/2.1;
+
         this.raycaster = new THREE.Raycaster()
 
         // this.tooltip = document.getElementById('tooltip_anchor')
