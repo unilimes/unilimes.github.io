@@ -157,8 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(function() { document.getElementById('yui_3_17_2_3_1509719000525_370').click(); }, 100);
             setTimeout(function() { document.getElementById('yui_3_17_2_4_1509719314638_370').click(); }, 500);
-            setTimeout(function() { document.getElementById('yui_3_17_2_4_1509719218279_369').click(); }, 600);
-            setTimeout(function() { document.getElementById('yui_3_17_2_6_1509719314638_370').click(); }, 700);
+            setTimeout(function() { document.getElementById('yui_3_17_2_4_1509719218279_369').click(); }, 550);
+            setTimeout(function() { document.getElementById('yui_3_17_2_6_1509719314638_370').click(); }, 600);
 
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');
