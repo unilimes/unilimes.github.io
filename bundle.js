@@ -45673,10 +45673,10 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(document.getElementById('Armrest').value);
             console.log(document.getElementById('Backrest').value);
             console.log(document.getElementById('Cushion').value);
-            document.getElementById('yui_3_17_2_3_1509719000525_370').click();
-            document.getElementById('yui_3_17_2_4_1509719314638_370').click();
-            document.getElementById('yui_3_17_2_4_1509719218279_369').click();
-            document.getElementById('yui_3_17_2_6_1509719314638_370').click();
+            setTimeout(function () { document.getElementById('yui_3_17_2_3_1509719000525_370').click(); }, 1000);
+            setTimeout(function () { document.getElementById('yui_3_17_2_4_1509719314638_370').click(); }, 2000);
+            setTimeout(function () { document.getElementById('yui_3_17_2_4_1509719218279_369').click(); }, 3000);
+            setTimeout(function () { document.getElementById('yui_3_17_2_6_1509719314638_370').click(); }, 4000);
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');
             // document.body.appendChild(anchor);
