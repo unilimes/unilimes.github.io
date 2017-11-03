@@ -145,15 +145,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // })
 
         document.getElementById('webgl_reserve_now').addEventListener('click', () => {
-            (<HTMLInputElement>document.getElementById('webgl_sqsp_sofa')).value = window['kopa_tally'].sofa;
-            (<HTMLInputElement>document.getElementById('webgl_sqsp_arm')).value = window['kopa_tally'].arm;
-            (<HTMLInputElement>document.getElementById('webgl_sqsp_back')).value = window['kopa_tally'].back;
-            (<HTMLInputElement>document.getElementById('webgl_sqsp_cushion')).value = window['kopa_tally'].cushion;
+            (<HTMLInputElement>document.getElementById('Seat')).value = window['kopa_tally'].sofa;
+            (<HTMLInputElement>document.getElementById('Armrest')).value = window['kopa_tally'].arm;
+            (<HTMLInputElement>document.getElementById('Backrest')).value = window['kopa_tally'].back;
+            (<HTMLInputElement>document.getElementById('Cushion')).value = window['kopa_tally'].cushion;
 
-            document.getElementById('sofa_add_cart').click();
-            document.getElementById('arm_add_cart').click();
-            document.getElementById('back_add_cart').click();
-            document.getElementById('cushion_add_cart').click();
+            document.getElementById('yui_3_17_2_3_1509719000525_370').click();
+            document.getElementById('yui_3_17_2_4_1509719314638_370').click();
+            document.getElementById('yui_3_17_2_4_1509719218279_369').click();
+            document.getElementById('yui_3_17_2_6_1509719314638_370').click();
 
             // let temp = document.querySelectorAll("[data-item-id='59f71658f9619ab1fccccdd5']");
             // // for (let i of temp) {
