@@ -150,40 +150,15 @@ document.addEventListener('DOMContentLoaded', () => {
             (<HTMLInputElement>document.getElementById('Backrest')).value = window['kopa_tally'].back;
             (<HTMLInputElement>document.getElementById('Cushion')).value = window['kopa_tally'].cushion;
 
+            console.log( (<HTMLInputElement>document.getElementById('Seat')).value );
+            console.log( (<HTMLInputElement>document.getElementById('Armrest')).value );
+            console.log( (<HTMLInputElement>document.getElementById('Backrest')).value );
+            console.log( (<HTMLInputElement>document.getElementById('Cushion')).value );
+
             document.getElementById('yui_3_17_2_3_1509719000525_370').click();
             document.getElementById('yui_3_17_2_4_1509719314638_370').click();
             document.getElementById('yui_3_17_2_4_1509719218279_369').click();
             document.getElementById('yui_3_17_2_6_1509719314638_370').click();
-
-            // let temp = document.querySelectorAll("[data-item-id='59f71658f9619ab1fccccdd5']");
-            // // for (let i of temp) {
-            // //     if (i.className == 'sqs-add-to-cart-button-wrapper') {
-            // //         i.click();
-            // //     }
-            // // }
-            // console.log(temp[0]);
-            // temp = document.querySelectorAll("[data-item-id='59f71720e4966b0784e6c27a']");
-            // // for (let i of temp) {
-            // //     if (i.className == 'sqs-add-to-cart-button-wrapper') {
-            // //         i.click();
-            // //     }
-            // // }
-            // console.log(temp[1]);
-            // temp = document.querySelectorAll("[data-item-id='59f717f48e7b0f7a605aede2']");
-            // // for (let i of temp) {
-            // //     if (i.className == 'sqs-add-to-cart-button-wrapper') {
-            // //         i.click();
-            // //     }
-            // // }
-            // console.log(temp[2].className);
-            // temp = document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0']");
-            // console.log('!!!!!', temp.length);
-            // for (let i = 0; i <= temp.length; i++) {
-            //     console.log(temp[i].className, (temp[i].className == 'sqs-add-to-cart-button-wrapper'));
-            //     if($(temp[i]).hasClass('sqs-add-to-cart-button-wrapper')){
-            //         $(temp[i]).click();
-            //     }
-            // }
 
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');
