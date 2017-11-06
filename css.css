@@ -33,7 +33,7 @@
             /* float: left; */
             display: inline-block;
         }
-        .zoomStyle, .nameCount, .countSofa, .blockDimantion, .totalStyle{
+        .zoomStyle, .nameCount, .countSofa, .blockDimantion, .totalStyle, .smaller{
             font-size: 16px;color: black;font-weight: bold;
         }
         .nameCount,.countSofa{
@@ -193,19 +193,57 @@
             z-index:1;
             left:-9999px;
             background-color:#fff;
-            border:2px solid #ddd;
+            border: 1px solid black;
             border-radius: 10px;
             box-shadow: 5px 5px 25px 0 #ddd;
         }
         .smaller{
-            color:red;
-            font-weight:100;
-            line-height:1.2em;
-            margin-left:0.5em;
+            /*color:red;*/
+            /*font-weight:100;*/
+            /*line-height:1.2em;*/
+            /*margin-left:0.5em;*/
         }
         .smaller:hover{
             cursor:pointer;
         }
+        .materialColor{
+            padding: 44px 5px 9px;
+            display: inline-block;
+            position: relative;
+            top: 30px;
+
+        }
+        .materialColorCusion{
+            padding: 44px 5px 9px;
+            display: inline-block;
+            position: relative;
+            top: 30px;
+
+        }
+        .removeSofa{
+            display : inline;
+            position: relative;
+            top: -111px;
+        }
+
+        .btn-remove-sofa, .btn-add-cushion, .btn-remove-cushion{
+            display: inline-block;
+            position: relative;
+            top: -80px;
+            width: 50%;
+        }
+
+        .accNameAddCushion{
+            display: inline;
+            padding : 8px;
+            position: relative;
+            top:-105px;
+            border-right: 1px solid #ccc;
+        }
+        .accNameAddCushion{
+
+        }
+
         .tooltip_int{
             font-weight:100;
             line-height:1.2em;
@@ -228,6 +266,8 @@
         .colorEl{
             min-width:1.5em;
             min-height:1.5em;
+            border-radius: 50%;
+            margin: 0 10px;
         }
         .colorEl:hover{
             cursor:pointer
