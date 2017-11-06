@@ -225,7 +225,10 @@
             position: relative;
             top: -111px;
         }
-
+        .btn-remove-sofa img, .btn-add-cushion img, .btn-remove-cushion img{
+            position: relative;
+            top:10px;
+        }
         .btn-remove-sofa, .btn-add-cushion, .btn-remove-cushion{
             display: inline-block;
             position: relative;
