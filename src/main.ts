@@ -155,10 +155,10 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log( (<HTMLInputElement>document.getElementById('Backrest')).value );
             console.log( (<HTMLInputElement>document.getElementById('Cushion')).value );
 
-            setTimeout(function() { document.getElementById('yui_3_17_2_3_1509719000525_370').click(); }, 100);
-            setTimeout(function() { document.getElementById('yui_3_17_2_4_1509719314638_370').click(); }, 500);
-            setTimeout(function() { document.getElementById('yui_3_17_2_4_1509719218279_369').click(); }, 550);
-            setTimeout(function() { document.getElementById('yui_3_17_2_6_1509719314638_370').click(); }, 600);
+            setTimeout(function() { document.getElementById('yui_3_17_2_1_1509985394439_153').click(); }, 100);
+            setTimeout(function() { document.getElementById('yui_3_17_2_1_1509984706599_152').click(); }, 500);
+            setTimeout(function() { document.getElementById('yui_3_17_2_1_1509984998759_152').click(); }, 550);
+            setTimeout(function() { document.getElementById('yui_3_17_2_1_1509985286676_152').click(); }, 600);
 
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');
