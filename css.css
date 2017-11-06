@@ -186,7 +186,7 @@
         #tooltip_singular
         {
             font-family:'arial';
-            padding:7px 15px;
+            padding: 0px 15px 12px;
             position:absolute;
             min-width: 10vw;
             min-height: 2vh;
@@ -229,7 +229,7 @@
         .btn-remove-sofa, .btn-add-cushion, .btn-remove-cushion{
             display: inline-block;
             position: relative;
-            top: -220px;
+            top: -105px;
             width: 50%;
         }
         #kopa_webgl img{
@@ -270,7 +270,7 @@
             min-width:1.5em;
             min-height:1.5em;
             border-radius: 50%;
-            margin: 0 10px;
+            margin: 0 5px;
         }
         .colorEl:hover{
             cursor:pointer
