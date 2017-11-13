@@ -151,20 +151,20 @@ document.addEventListener('DOMContentLoaded', () => {
             (<HTMLInputElement>(document.querySelectorAll("[data-item-id='59fc7b58652deac953923e02'")[0].children[0])).value = window['kopa_tally'].back;
             (<HTMLInputElement>(document.querySelectorAll("[data-item-id='59fc7b5f24a694eecd2344c2'")[0].children[0])).value = window['kopa_tally'].cushion;
 
-            console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b18ec212dd8d9a3661a'")[0].children[0]).value );
-            console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0'")[0].children[0]).value );
-            console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b58652deac953923e02'")[0].children[0]).value );
-            console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b5f24a694eecd2344c2'")[0].children[0]).value );
+            // console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b18ec212dd8d9a3661a'")[0].children[0]).value );
+            // console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0'")[0].children[0]).value );
+            // console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b58652deac953923e02'")[0].children[0]).value );
+            // console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b5f24a694eecd2344c2'")[0].children[0]).value );
 
             function addToCart(elem) {
                 document.getElementById(elem).click();
                 document.getElementById(elem).style.display = 'none';
             }
 
-            setTimeout(addToCart('yui_3_17_2_1_1509985394439_153'), 100);
-            setTimeout(addToCart('yui_3_17_2_1_1509984706599_152'), 200);
-            setTimeout(addToCart('yui_3_17_2_1_1509984998759_152'), 300);
-            setTimeout(addToCart('yui_3_17_2_1_1509985286676_152'), 400);
+            setTimeout(addToCart('yui_3_17_2_1_1509985394439_153'), 500);
+            setTimeout(addToCart('yui_3_17_2_1_1509984706599_152'), 1000);
+            setTimeout(addToCart('yui_3_17_2_1_1509984998759_152'), 1500);
+            setTimeout(addToCart('yui_3_17_2_1_1509985286676_152'), 2000);
 
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');
