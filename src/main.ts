@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             function addToCart(elem, data) {
                 document.getElementById(elem).click();
                 document.getElementById(elem).style.display = 'none';
-                console.log( (<HTMLInputElement>document.querySelectorAll(data)[0].children[0]).value );
+                console.log( '\n', (<HTMLInputElement>document.querySelectorAll(data)[0].children[0]).value, '\n' );
             }
 
             setTimeout(addToCart('yui_3_17_2_1_1509985394439_153', "[data-item-id='59fc7b18ec212dd8d9a3661a'"), 500);

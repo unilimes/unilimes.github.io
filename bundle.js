@@ -45696,7 +45696,7 @@ document.addEventListener('DOMContentLoaded', function () {
             function addToCart(elem, data) {
                 document.getElementById(elem).click();
                 document.getElementById(elem).style.display = 'none';
-                console.log(document.querySelectorAll(data)[0].children[0].value);
+                console.log('\n', document.querySelectorAll(data)[0].children[0].value, '\n');
             }
             setTimeout(addToCart('yui_3_17_2_1_1509985394439_153', "[data-item-id='59fc7b18ec212dd8d9a3661a'"), 500);
             setTimeout(addToCart('yui_3_17_2_1_1509984706599_152', "[data-item-id='59f716b424a694055a7c20c0'"), 1000);
