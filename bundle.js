@@ -45542,7 +45542,7 @@ var Floor = /** @class */ (function () {
         /* add mirrored surface */
         this.bufferedGeometry = new THREE.PlaneBufferGeometry(1024, 1024);
         this.geometry = new THREE.PlaneGeometry(1024, 1024);
-        this.groundMirror = new mirror(renderer, camera, { clipBias: 0.003, textureWidth: 1024, textureHeight: 1024, color: constants_1.MIRROR_COLOR });
+        this.groundMirror = Mirror()(renderer, camera, { clipBias: 0.003, textureWidth: 1024, textureHeight: 1024, color: constants_1.MIRROR_COLOR });
         this.material = new THREE.MeshPhongMaterial({
             color: constants_1.MIRROR_COLOR,
             side: THREE.DoubleSide,
@@ -45647,7 +45647,7 @@ var KopaViewer = /** @class */ (function () {
         /* setting up the scene + units */
         this.scene = new scene_1.Scene(this.renderer);
         /* util deals with drag controls and highlighting */
-        this.util = new util_1.Util(this.scene.camera, this.renderer.domElement);
+        this.util = new util_1.Util(this.scene.camera, this.canvas);
         this.modSofa = new modSofa_1.ModifySofaDialog(this.scene.sofaFactory);
         this.canvas.addEventListener('mousemove', function (e) { return _this.util.mouseMoveEvent(_this.canvas, e); }, false);
         this.canvas.addEventListener('click', function (e) { return _this.onHoverControls.mouseClickEvent(_this.canvas, e, _this.modSofa); }, false);

@@ -31,7 +31,7 @@ export class KopaViewer {
         this.scene = new Scene(this.renderer);
 
         /* util deals with drag controls and highlighting */
-        this.util = new Util(this.scene.camera, this.renderer.domElement)
+        this.util = new Util(this.scene.camera, this.canvas)
         this.modSofa = new ModifySofaDialog( this.scene.sofaFactory )
 
         this.canvas.addEventListener('mousemove', (e) => this.util.mouseMoveEvent(this.canvas, e), false);

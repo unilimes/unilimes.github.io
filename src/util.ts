@@ -17,7 +17,7 @@ export class Util{
 
     // tooltip : HTMLElement
 
-    constructor(camera:THREE.Camera,domElement:HTMLCanvasElement){
+    constructor(camera:THREE.Camera,domElement:HTMLElement){
         this.camera = camera;
         this.control = new orbitControls(camera,domElement);
         this.control.enableZoom = false;
