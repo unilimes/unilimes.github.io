@@ -21,7 +21,6 @@ export class KopaViewer {
     constructor(canvas: HTMLElement) {
         this.canvas = canvas;
 
-        console.log('\n\n\n\n\n hahkhgdsksfgudszfgdskusuodfoig \n\n\n\n\n\n');
 
         /* setting up the renderer */
         this.renderer = new THREE.WebGLRenderer()
