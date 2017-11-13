@@ -156,10 +156,15 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b58652deac953923e02'")[0].children[0]).value );
             console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b5f24a694eecd2344c2'")[0].children[0]).value );
 
-            setTimeout(function() { document.getElementById('yui_3_17_2_1_1509985394439_153').click(); }, 100);
-            setTimeout(function() { document.getElementById('yui_3_17_2_1_1509984706599_152').click(); }, 500);
-            setTimeout(function() { document.getElementById('yui_3_17_2_1_1509984998759_152').click(); }, 550);
-            setTimeout(function() { document.getElementById('yui_3_17_2_1_1509985286676_152').click(); }, 600);
+            function addToCart(elem) {
+                document.getElementById(elem).click();
+                document.getElementById(elem).style.display = 'none';
+            }
+
+            setTimeout(addToCart('yui_3_17_2_1_1509985394439_153'), 100);
+            setTimeout(addToCart('yui_3_17_2_1_1509984706599_152'), 200);
+            setTimeout(addToCart('yui_3_17_2_1_1509984998759_152'), 300);
+            setTimeout(addToCart('yui_3_17_2_1_1509985286676_152'), 400);
 
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');
