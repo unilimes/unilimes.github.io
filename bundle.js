@@ -45685,14 +45685,14 @@ document.addEventListener('DOMContentLoaded', function () {
         //     let testbutton = document.getElementById('yui_3_17_2_1_1502516319895_248').click()
         // })
         document.getElementById('webgl_reserve_now').addEventListener('click', function () {
-            document.getElementById('Seat').value = window['kopa_tally'].sofa;
-            document.getElementById('Armrest').value = window['kopa_tally'].arm;
-            document.getElementById('Backrest').value = window['kopa_tally'].back;
-            document.getElementById('Cushion').value = window['kopa_tally'].cushion;
-            console.log(document.getElementById('Seat').value);
-            console.log(document.getElementById('Armrest').value);
-            console.log(document.getElementById('Backrest').value);
-            console.log(document.getElementById('Cushion').value);
+            (document.querySelectorAll("[data-item-id='59fc7b18ec212dd8d9a3661a'")[0].children[0]).value = window['kopa_tally'].sofa;
+            (document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0'")[0].children[0]).value = window['kopa_tally'].arm;
+            (document.querySelectorAll("[data-item-id='59fc7b58652deac953923e02'")[0].children[0]).value = window['kopa_tally'].back;
+            (document.querySelectorAll("[data-item-id='59fc7b5f24a694eecd2344c2'")[0].children[0]).value = window['kopa_tally'].cushion;
+            console.log(document.querySelectorAll("[data-item-id='59fc7b18ec212dd8d9a3661a'")[0].children[0].value);
+            console.log(document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0'")[0].children[0].value);
+            console.log(document.querySelectorAll("[data-item-id='59fc7b58652deac953923e02'")[0].children[0].value);
+            console.log(document.querySelectorAll("[data-item-id='59fc7b5f24a694eecd2344c2'")[0].children[0].value);
             setTimeout(function () { document.getElementById('yui_3_17_2_1_1509985394439_153').click(); }, 100);
             setTimeout(function () { document.getElementById('yui_3_17_2_1_1509984706599_152').click(); }, 500);
             setTimeout(function () { document.getElementById('yui_3_17_2_1_1509984998759_152').click(); }, 550);

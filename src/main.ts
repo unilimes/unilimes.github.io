@@ -146,15 +146,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // })
 
         document.getElementById('webgl_reserve_now').addEventListener('click', () => {
-            (<HTMLInputElement>document.getElementById('Seat')).value = window['kopa_tally'].sofa;
-            (<HTMLInputElement>document.getElementById('Armrest')).value = window['kopa_tally'].arm;
-            (<HTMLInputElement>document.getElementById('Backrest')).value = window['kopa_tally'].back;
-            (<HTMLInputElement>document.getElementById('Cushion')).value = window['kopa_tally'].cushion;
+            (<HTMLInputElement>(document.querySelectorAll("[data-item-id='59fc7b18ec212dd8d9a3661a'")[0].children[0])).value = window['kopa_tally'].sofa;
+            (<HTMLInputElement>(document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0'")[0].children[0])).value = window['kopa_tally'].arm;
+            (<HTMLInputElement>(document.querySelectorAll("[data-item-id='59fc7b58652deac953923e02'")[0].children[0])).value = window['kopa_tally'].back;
+            (<HTMLInputElement>(document.querySelectorAll("[data-item-id='59fc7b5f24a694eecd2344c2'")[0].children[0])).value = window['kopa_tally'].cushion;
 
-            console.log( (<HTMLInputElement>document.getElementById('Seat')).value );
-            console.log( (<HTMLInputElement>document.getElementById('Armrest')).value );
-            console.log( (<HTMLInputElement>document.getElementById('Backrest')).value );
-            console.log( (<HTMLInputElement>document.getElementById('Cushion')).value );
+            console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b18ec212dd8d9a3661a'")[0].children[0]).value );
+            console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0'")[0].children[0]).value );
+            console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b58652deac953923e02'")[0].children[0]).value );
+            console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b5f24a694eecd2344c2'")[0].children[0]).value );
 
             setTimeout(function() { document.getElementById('yui_3_17_2_1_1509985394439_153').click(); }, 100);
             setTimeout(function() { document.getElementById('yui_3_17_2_1_1509984706599_152').click(); }, 500);
