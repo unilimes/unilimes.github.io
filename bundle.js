@@ -45643,11 +45643,11 @@ var KopaViewer = /** @class */ (function () {
         this.renderer = new THREE.WebGLRenderer();
         this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
         this.renderer.setClearColor(constants_1.RENDERER_COLOR);
-        // this.canvas.appendChild( this.renderer.domElement )
+        this.canvas.appendChild(this.renderer.domElement);
         /* setting up the scene + units */
         this.scene = new scene_1.Scene(this.renderer);
         /* util deals with drag controls and highlighting */
-        // this.util = new Util(this.scene.camera, this.renderer.domElement)
+        this.util = new util_1.Util(this.scene.camera, this.renderer.domElement);
         this.modSofa = new modSofa_1.ModifySofaDialog(this.scene.sofaFactory);
         this.canvas.addEventListener('mousemove', function (e) { return _this.util.mouseMoveEvent(_this.canvas, e); }, false);
         this.canvas.addEventListener('click', function (e) { return _this.onHoverControls.mouseClickEvent(_this.canvas, e, _this.modSofa); }, false);
