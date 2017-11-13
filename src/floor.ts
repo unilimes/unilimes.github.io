@@ -20,7 +20,7 @@ export class Floor{
         /* add mirrored surface */
         this.bufferedGeometry = new THREE.PlaneBufferGeometry(1024,1024)
         this.geometry = new THREE.PlaneGeometry(1024,1024)
-        this.groundMirror = Mirror()(
+        this.groundMirror = Mirror(THREE)(
             renderer,
             camera, {clipBias : 0.003,textureWidth: 1024, textureHeight: 1024,color:MIRROR_COLOR})
         this.material = new THREE.MeshPhongMaterial({
