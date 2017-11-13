@@ -145,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // })
 
         document.getElementById('webgl_reserve_now').addEventListener('click', () => {
-            console.log(document.getElementById('Seat'));
             (<HTMLInputElement>document.getElementById('Seat')).value = window['kopa_tally'].sofa;
             (<HTMLInputElement>document.getElementById('Armrest')).value = window['kopa_tally'].arm;
             (<HTMLInputElement>document.getElementById('Backrest')).value = window['kopa_tally'].back;
