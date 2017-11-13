@@ -155,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 (<HTMLInputElement>(document.querySelectorAll(data)[0].children[0])).value = value;
                 document.getElementById(elem).click();
                 document.getElementById(elem).style.display = 'none';
+                console.log(document.querySelectorAll(data)[0].children[0].value);
             }
 
             setTimeout(addToCart, 500, 'yui_3_17_2_1_1509985394439_153', "[data-item-id='59fc7b18ec212dd8d9a3661a'", window['kopa_tally'].sofa);
