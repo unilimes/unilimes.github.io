@@ -2,7 +2,7 @@ import * as THREE from "three"
 import * as Mirror from './Mirror.js'
 import { RENDER_MIRROR,FLOOR_COLOR,MIRROR_COLOR } from './constants'
 
-let mirror = Mirror(THREE)
+const mirror = Mirror(THREE)
 
 export class Floor{
 
@@ -20,7 +20,7 @@ export class Floor{
         /* add mirrored surface */
         this.bufferedGeometry = new THREE.PlaneBufferGeometry(1024,1024)
         this.geometry = new THREE.PlaneGeometry(1024,1024)
-        this.groundMirror = Mirror(THREE)(
+        this.groundMirror = new mirror(
             renderer,
             camera, {clipBias : 0.003,textureWidth: 1024, textureHeight: 1024,color:MIRROR_COLOR})
         this.material = new THREE.MeshPhongMaterial({
