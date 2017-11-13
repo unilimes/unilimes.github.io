@@ -23,7 +23,6 @@ export class Floor{
         this.groundMirror = Mirror()(
             renderer,
             camera, {clipBias : 0.003,textureWidth: 1024, textureHeight: 1024,color:MIRROR_COLOR})
-
         this.material = new THREE.MeshPhongMaterial({
             color:MIRROR_COLOR,
             side:THREE.DoubleSide,
