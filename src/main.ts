@@ -171,14 +171,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(addToCart, 1500, 'yui_3_17_2_1_1509984706599_152', "[data-item-id='59f716b424a694055a7c20c0'", window['kopa_tally'].sofa);
             }
 //////
-           function linkToCart(){
-               const anchor = document.createElement('a');
-               anchor.setAttribute('href','/cart');
-               document.body.appendChild(anchor);
-               anchor.click();
-           }
+//            function linkToCart(){
+//                const anchor = document.createElement('a');
+//                anchor.setAttribute('href','/cart');
+//                document.body.appendChild(anchor);
+//                anchor.click();
+//            }
 
-            setTimeout(linkToCart, 10000);
+            // setTimeout(linkToCart, 10000);
 
         });
         document.getElementById('webgl_control_zoomIn').addEventListener('click', () => {
