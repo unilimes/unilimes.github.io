@@ -23,17 +23,17 @@ export class KopaViewer {
 
 
         /* setting up the renderer */
-        this.renderer = new THREE.WebGLRenderer()
-        this.renderer.setSize( this.canvas.clientWidth, this.canvas.clientHeight )
-        this.renderer.setClearColor(RENDERER_COLOR)
-        this.canvas.appendChild( this.renderer.domElement )
+        this.renderer = new THREE.WebGLRenderer();
+        this.renderer.setSize( this.canvas.clientWidth, this.canvas.clientHeight );
+        this.renderer.setClearColor(RENDERER_COLOR);
+        this.canvas.appendChild( this.renderer.domElement );
 
         /* setting up the scene + units */
         this.scene = new Scene(this.renderer);
 
         /* util deals with drag controls and highlighting */
-        this.util = new Util(this.scene.camera, this.canvas)
-        this.modSofa = new ModifySofaDialog( this.scene.sofaFactory )
+        this.util = new Util(this.scene.camera, this.canvas);
+        this.modSofa = new ModifySofaDialog( this.scene.sofaFactory );
 
         this.canvas.addEventListener('mousemove', (e) => this.util.mouseMoveEvent(this.canvas, e), false);
         this.canvas.addEventListener('click', (e) => this.onHoverControls.mouseClickEvent(this.canvas, e, this.modSofa), false);
@@ -151,17 +151,17 @@ document.addEventListener('DOMContentLoaded', () => {
             // console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b58652deac953923e02'")[0].children[0]).value );
             // console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b5f24a694eecd2344c2'")[0].children[0]).value );
 
-            function addToCart(elem, data, value) {
+            function addToCart(id, data, value) {
                 (<HTMLInputElement>(document.querySelectorAll(data)[0].children[0])).value = value;
-                document.getElementById(elem).click();
-                document.getElementById(elem).style.display = 'none';
+                document.getElementById(id).click();
+                document.getElementById(id).style.display = 'none';
                 console.log(document.querySelectorAll(data)[0].children[0].value);
             }
 
             setTimeout(addToCart, 500, 'yui_3_17_2_1_1509985394439_153', "[data-item-id='59fc7b18ec212dd8d9a3661a'", window['kopa_tally'].sofa);
+            setTimeout(addToCart, 700, 'yui_3_17_2_1_1509984998759_152', "[data-item-id='59fc7b58652deac953923e02'", window['kopa_tally'].back);
             setTimeout(addToCart, 1000, 'yui_3_17_2_1_1509984706599_152', "[data-item-id='59f716b424a694055a7c20c0'", window['kopa_tally'].arm);
-            setTimeout(addToCart, 1500, 'yui_3_17_2_1_1509984998759_152', "[data-item-id='59fc7b58652deac953923e02'", window['kopa_tally'].back);
-            setTimeout(addToCart, 2000, 'yui_3_17_2_1_1509985286676_152', "[data-item-id='59fc7b5f24a694eecd2344c2'", window['kopa_tally'].cushion);
+            setTimeout(addToCart, 1300, 'yui_3_17_2_1_1509985286676_152', "[data-item-id='59fc7b5f24a694eecd2344c2'", window['kopa_tally'].cushion);
 
             // const anchor = document.createElement('a');
             // anchor.setAttribute('href','/cart');

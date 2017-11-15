@@ -45689,10 +45689,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0'")[0].children[0]).value );
             // console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b58652deac953923e02'")[0].children[0]).value );
             // console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b5f24a694eecd2344c2'")[0].children[0]).value );
-            function addToCart(elem, data, value) {
+            function addToCart(id, data, value) {
                 (document.querySelectorAll(data)[0].children[0]).value = value;
-                document.getElementById(elem).click();
-                document.getElementById(elem).style.display = 'none';
+                document.getElementById(id).click();
+                document.getElementById(id).style.display = 'none';
                 console.log(document.querySelectorAll(data)[0].children[0].value);
             }
             setTimeout(addToCart, 500, 'yui_3_17_2_1_1509985394439_153', "[data-item-id='59fc7b18ec212dd8d9a3661a'", window['kopa_tally'].sofa);

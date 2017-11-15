@@ -1,55 +1,55 @@
-export const FACTOR = 11
-export const SOFAWIDTH = 3.27 * FACTOR
-export const SOFAHEIGHT = 1.45 * FACTOR
+export const FACTOR = 11;
+export const SOFAWIDTH = 3.27 * FACTOR;
+export const SOFAHEIGHT = 1.45 * FACTOR;
 
-export const ZOOMFACTOR = 1.2
+export const ZOOMFACTOR = 1.2;
 
-export const INIT_CAMERA_POS = [0,45,90]
+export const INIT_CAMERA_POS = [0,45,90];
 
 export const PERSPECTIVE_CAMERA_CONFIG = {
         FOV : 60,
         aspectRatio : 16/9,
         clipNear : 0.125,
         clipFar : 2048
-    }
+    };
 
-export const HIGHLIGHT_COLOR = 0x111111
-export const HIGHLIGHT_COLOR2 = 0xec0044
+export const HIGHLIGHT_COLOR = 0x111111;
+export const HIGHLIGHT_COLOR2 = 0xec0044;
 
-export const WHITE = 0xcacdd2
-export const BLACK = 0x222328
-export const BROWN = 0xa69d94
-export const PINK = 0xc4a8b6
-export const BLUE_ = 0x848dac
+export const WHITE = 0xcacdd2;
+export const BLACK = 0x222328;
+export const BROWN = 0xa69d94;
+export const PINK = 0xc4a8b6;
+export const BLUE_ = 0x848dac;
 
-export const CHALK = 0xddd7c9
-export const LIGHTGRAY = 0xa1a1a1
-export const BEIGE = 0x9b8f86
-export const BLUE = 0x1d274b
-export const CHARCOALBLACK = 0x141319
+export const CHALK = 0xddd7c9;
+export const LIGHTGRAY = 0xa1a1a1;
+export const BEIGE = 0x9b8f86;
+export const BLUE = 0x1d274b;
+export const CHARCOALBLACK = 0x141319;
 
-export const CHARCOAL = 0x514d4a
-export const NAVY = 0x343b55
-export const LIGHTGRAY_ = 0x848484
-export const BEIGE_ = 0x897d6d
+export const CHARCOAL = 0x514d4a;
+export const NAVY = 0x343b55;
+export const LIGHTGRAY_ = 0x848484;
+export const BEIGE_ = 0x897d6d;
 
 // Cusion color
-export const BLACK_CUSION = 0x2d2d2d
-export const BLUE_CUSION = 0x1e2c55
-export const LIGHTGRAY_CUSION = 0x7b7b7b
-export const PURPLE_CUSION = 0x624971
-export const YELLOW_CUSION = 0xad9d4f
+export const BLACK_CUSION = 0x2d2d2d;
+export const BLUE_CUSION = 0x1e2c55;
+export const LIGHTGRAY_CUSION = 0x7b7b7b;
+export const PURPLE_CUSION = 0x624971;
+export const YELLOW_CUSION = 0xad9d4f;
 
-export const TEXTURE_WRAPS = 2
-export const TEXTURE_WRAPT = 2
+export const TEXTURE_WRAPS = 2;
+export const TEXTURE_WRAPT = 2;
 
-export const TEXTURE_BUMP = 0.1
+export const TEXTURE_BUMP = 0.1;
 
-export const NODESIZE = 0.1 * FACTOR
+export const NODESIZE = 0.1 * FACTOR;
 
 /* renderer color */
-export const RENDERER_COLOR = 0xFFFFFF
-export const SKYBOX_COLOR = 0xfafafa
+export const RENDERER_COLOR = 0xFFFFFF;
+export const SKYBOX_COLOR = 0xfafafa;
 // export const SKYBOX_COLOR = 0x161616
 
 /* floor */
