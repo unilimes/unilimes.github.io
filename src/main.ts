@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
                anchor.click();
            }
 
-            setTimeout(linkToCart, 3000);
+            setTimeout(linkToCart, 2000);
 
         });
         document.getElementById('webgl_control_zoomIn').addEventListener('click', () => {
