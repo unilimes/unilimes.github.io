@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // anchor.setAttribute('href','/cart');
             // document.body.appendChild(anchor);
             // anchor.click();
-            console.log(window['kopa_tally'].cushion);
+            console.log(window['kopa_tally']);
         });
         document.getElementById('webgl_control_zoomIn').addEventListener('click', () => {
             console.log(kopaViewer.scene.camera.position, ZOOMFACTOR);
