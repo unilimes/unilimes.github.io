@@ -45706,10 +45706,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (window['kopa_tally'].sofa > 0) {
                 setTimeout(addToCart, 1100, 'yui_3_17_2_1_1509984706599_152', "[data-item-id='59f716b424a694055a7c20c0'", window['kopa_tally'].sofa);
             }
-            var anchor = document.createElement('a');
-            anchor.setAttribute('href', '/cart');
-            document.body.appendChild(anchor);
-            anchor.click();
+            // const anchor = document.createElement('a');
+            // anchor.setAttribute('href','/cart');
+            // document.body.appendChild(anchor);
+            // anchor.click();
         });
         document.getElementById('webgl_control_zoomIn').addEventListener('click', function () {
             console.log(kopaViewer_1.scene.camera.position, constants_1.ZOOMFACTOR);
