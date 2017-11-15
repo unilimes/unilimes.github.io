@@ -157,10 +157,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById(id).style.display = 'none';
                 console.log(document.querySelectorAll(data)[0].children[0].value);
                 if ((document.querySelectorAll(data)[0].children[0].value) > 0 ){
-                    setTimeout(addToCart, 1000, 'yui_3_17_2_1_1509985286676_152', "[data-item-id='59fc7b5f24a694eecd2344c2'", window['kopa_tally'].cushion);
-                    setTimeout(addToCart, 1000, 'yui_3_17_2_1_1509984706599_152', "[data-item-id='59f716b424a694055a7c20c0'", window['kopa_tally'].arm);
-                    setTimeout(addToCart, 1000, 'yui_3_17_2_1_1509984998759_152', "[data-item-id='59fc7b58652deac953923e02'", window['kopa_tally'].back);
-                    setTimeout(addToCart, 1000, 'yui_3_17_2_1_1509985394439_153', "[data-item-id='59fc7b18ec212dd8d9a3661a'", window['kopa_tally'].sofa);
+                    setTimeout(addToCart, 500, 'yui_3_17_2_1_1509985286676_152', "[data-item-id='59fc7b5f24a694eecd2344c2'", window['kopa_tally'].cushion);
+                    setTimeout(addToCart, 700, 'yui_3_17_2_1_1509984706599_152', "[data-item-id='59f716b424a694055a7c20c0'", window['kopa_tally'].arm);
+                    setTimeout(addToCart, 900, 'yui_3_17_2_1_1509984998759_152', "[data-item-id='59fc7b58652deac953923e02'", window['kopa_tally'].back);
+                    setTimeout(addToCart, 1100, 'yui_3_17_2_1_1509985394439_153', "[data-item-id='59fc7b18ec212dd8d9a3661a'", window['kopa_tally'].sofa);
                 }
             }
 
