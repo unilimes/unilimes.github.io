@@ -45693,9 +45693,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 (document.querySelectorAll(data)[0].children[0]).value = value;
                 document.getElementById(id).click();
                 document.getElementById(id).style.display = 'none';
-                // console.log(document.querySelectorAll(data)[0].children[0].value);
-                // if ((document.querySelectorAll(data)[0].children[0].value) > 0 ){
-                //      }
             }
             if (window['kopa_tally'].cushion > 0) {
                 setTimeout(addToCart, 500, 'yui_3_17_2_1_1509985286676_152', "[data-item-id='59fc7b5f24a694eecd2344c2'", window['kopa_tally'].cushion);
@@ -45709,12 +45706,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (window['kopa_tally'].sofa > 0) {
                 setTimeout(addToCart, 1100, 'yui_3_17_2_1_1509984706599_152', "[data-item-id='59f716b424a694055a7c20c0'", window['kopa_tally'].sofa);
             }
-            ////////////
-            // const anchor = document.createElement('a');
-            // anchor.setAttribute('href','/cart');
-            // document.body.appendChild(anchor);
-            // anchor.click();
-            console.log(window['kopa_tally']);
+            var anchor = document.createElement('a');
+            anchor.setAttribute('href', '/cart');
+            document.body.appendChild(anchor);
+            anchor.click();
         });
         document.getElementById('webgl_control_zoomIn').addEventListener('click', function () {
             console.log(kopaViewer_1.scene.camera.position, constants_1.ZOOMFACTOR);
