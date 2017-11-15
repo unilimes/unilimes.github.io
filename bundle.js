@@ -45714,7 +45714,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // anchor.setAttribute('href','/cart');
             // document.body.appendChild(anchor);
             // anchor.click();
-            console.log(window['kopa_tally'].cushion);
+            console.log(window['kopa_tally']);
         });
         document.getElementById('webgl_control_zoomIn').addEventListener('click', function () {
             console.log(kopaViewer_1.scene.camera.position, constants_1.ZOOMFACTOR);
