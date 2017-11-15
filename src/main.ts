@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
                document.body.appendChild(anchor);
                anchor.click();
            }
-
+////
             setTimeout(linkToCart, 10000);
 
         });
