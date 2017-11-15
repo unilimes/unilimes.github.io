@@ -45713,6 +45713,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.body.appendChild(anchor);
                 anchor.click();
             }
+            ////
             setTimeout(linkToCart, 10000);
         });
         document.getElementById('webgl_control_zoomIn').addEventListener('click', function () {
