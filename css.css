@@ -21,7 +21,7 @@
         }
         .zoom_btn_wrap{
             display: inline-block;
-            margin: 10px 0 10px 39px;
+            margin: 17px 0 10px 26px;
         }
         .countSofa{
             float: left;
@@ -57,7 +57,7 @@
         }
         .totalWrap{
             position: absolute;
-            top: 73%;
+            top: 68%;
             right: 19px;
         }
         .blockDimantion{
@@ -97,7 +97,7 @@
         #webgl_info
         {
             height: 100%;
-            top:0px;
+            top:0;
             width:80%;
             margin:10%;
         }
@@ -105,12 +105,13 @@
         {
             display:block;
             width:80%;
-            font-size: smaller;
-            margin: 20px 10% 8%;
-            padding:5px;
-            text-align:center;
-            box-sizing:border-box;
+            font-size: 15px;
+            margin: 40px 10% 8%;
+            padding: 5px;
+            text-align: center;
+            box-sizing: border-box;
             text-transform: uppercase;
+            line-height: 1.5;
             box-shadow: 0 0 1em 0 rgba(0,0,0,0.3);
             color:rgb(250,250,250);
             background-color: rgba(236, 0, 0, 0.5);
