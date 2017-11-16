@@ -53,34 +53,34 @@ export const SKYBOX_COLOR = 0xfafafa;
 // export const SKYBOX_COLOR = 0x161616
 
 /* floor */
-export const RENDER_MIRROR = true
-export const FLOOR_COLOR = 0xe2e2e2
-export const MIRROR_COLOR = 0xa0a0a0
+export const RENDER_MIRROR = true;
+export const FLOOR_COLOR = 0xe2e2e2;
+export const MIRROR_COLOR = 0xa0a0a0;
 // export const MIRROR_COLOR = 0x7D7D7D
 
 /* light */
-export const AMBIENT_INTENSITY = 0.
-export const SPOT_HEIGHT = 64
+export const AMBIENT_INTENSITY = 0.;
+export const SPOT_HEIGHT = 64;
 
-export const RENDER_SPOT = false
+export const RENDER_SPOT = false;
 
-export const SPOT_COLOR = 0xffffff
-export const SPOT_INTENSITY = 0.5
-export const SPOT_DISTANCE = 300
-export const SPOT_ANGLE = 3.05
-export const SPOT_PENUMBRA = 0.3
-export const SPOT_DECAY = 1
+export const SPOT_COLOR = 0xffffff;
+export const SPOT_INTENSITY = 0.5;
+export const SPOT_DISTANCE = 300;
+export const SPOT_ANGLE = 3.05;
+export const SPOT_PENUMBRA = 0.3;
+export const SPOT_DECAY = 1;
 
 /* root folder for loading assets */
 
-export const ROOT = 'https://unilimes.github.io/'
+export const ROOT = 'https://unilimes.github.io/';
 // export const ROOT = 'http://localhost/kopa2/'
 
 export const PRICE = {
-    SOFA : 330,
-    ARMREST : 220,
-    BACKREST : 110,
-    CUSHION : 30
-}
+    SOFA : 418,
+    ARMREST : 286,
+    BACKREST : 176,
+    CUSHION : 55
+};
 
-export const SCALE = 1000 / 37 /11 * FACTOR
+export const SCALE = 1000 / 37 /11 * FACTOR;

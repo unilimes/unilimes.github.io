@@ -43816,10 +43816,10 @@ exports.SPOT_DECAY = 1;
 exports.ROOT = 'https://unilimes.github.io/';
 // export const ROOT = 'http://localhost/kopa2/'
 exports.PRICE = {
-    SOFA: 330,
-    ARMREST: 220,
-    BACKREST: 110,
-    CUSHION: 30
+    SOFA: 418,
+    ARMREST: 286,
+    BACKREST: 176,
+    CUSHION: 55
 };
 exports.SCALE = 1000 / 37 / 11 * exports.FACTOR;
 
