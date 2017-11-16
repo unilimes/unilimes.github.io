@@ -45710,7 +45710,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.body.appendChild(anchor);
                 anchor.click();
             }
-            setTimeout(linkToCart, 10000);
+            setTimeout(linkToCart, 4000);
         });
         document.getElementById('webgl_control_zoomIn').addEventListener('click', function () {
             console.log(kopaViewer_1.scene.camera.position, constants_1.ZOOMFACTOR);
