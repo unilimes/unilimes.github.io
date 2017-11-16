@@ -95,6 +95,9 @@
             right: 2%;
             visibility: hidden;
         }
+        .borderNone{
+            border:none;
+        }
         #webgl_info
         {
             height: 100%;
