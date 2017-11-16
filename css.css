@@ -85,6 +85,7 @@
             background-color: rgba(255,255,255,0.4);
             display: block;
             width: 200px;
+            line-height: 1;
             min-height: 100px;
             overflow: hidden;
             position: absolute;
@@ -193,12 +194,20 @@
             position:absolute;
             min-width: 10vw;
             min-height: 2vh;
+            font-size: 18px;
+            letter-spacing: 0;
+            line-height: 1em;
             z-index:1;
             left:-9999px;
             background-color:#fff;
             border: 1px solid black;
             border-radius: 10px;
             box-shadow: 5px 5px 25px 0 #ddd;
+        }
+        .accNameAddArmRest{
+            display : inline;
+            border-right : 1px solid #ccc;
+            padding : 8px;
         }
         .smaller{
             /*color:red;*/
