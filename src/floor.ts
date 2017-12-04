@@ -3,7 +3,10 @@ import * as Mirror from './Mirror.js'
 import { RENDER_MIRROR,FLOOR_COLOR,MIRROR_COLOR } from './constants'
 
 const mirror = Mirror(THREE)
-
+/**
+ * Creates a new Floor.
+ * @class
+ */
 export class Floor{
 
     bufferedGeometry : THREE.BufferGeometry

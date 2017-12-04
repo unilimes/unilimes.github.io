@@ -3,7 +3,10 @@ import * as THREE from "three"
 import {Util, OnHoverControls} from "./util"
 import {ModifySofaDialog} from "./modSofa"
 import {ZOOMFACTOR, HIGHLIGHT_COLOR, RENDERER_COLOR, RENDER_MIRROR, RENDER_SPOT} from "./constants"
-
+/**
+ * Creates a KopaViewer.
+ * @class
+ */
 export class KopaViewer {
 
     canvas: HTMLElement;
@@ -43,7 +46,7 @@ export class KopaViewer {
         if (RENDER_SPOT) this.configShadow();
         this.init()
     }
-
+    /** @function configShadow */
     configShadow() {
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -150,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59f716b424a694055a7c20c0'")[0].children[0]).value );
             // console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b58652deac953923e02'")[0].children[0]).value );
             // console.log( (<HTMLInputElement>document.querySelectorAll("[data-item-id='59fc7b5f24a694eecd2344c2'")[0].children[0]).value );
-
+            /** @function addToCart */
             function addToCart(id, data, value) {
                 (<HTMLInputElement>(document.querySelectorAll(data)[0].children[0])).value = value;
                 document.getElementById(id).click();
@@ -191,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
            //  setTimeout(linkToCart, 4000);
 
         });
+        /** @function zoomIn */
         document.getElementById('webgl_control_zoomIn').addEventListener('click', () => {
             console.log(kopaViewer.scene.camera.position, ZOOMFACTOR);
             kopaViewer.scene.camera.position.set(
@@ -199,6 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 kopaViewer.scene.camera.position.z / ZOOMFACTOR
             )
         });
+        /** @function zoomOut */
         document.getElementById('webgl_control_zoomOut').addEventListener('click', () => {
             // kopaViewer.util.control.dollyOut(1.2)
             kopaViewer.scene.camera.position.set(

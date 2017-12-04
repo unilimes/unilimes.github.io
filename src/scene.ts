@@ -3,7 +3,10 @@ import { Floor } from "./floor"
 import { Sofa } from "./sofaModel"
 import { SofaFactory } from "./sofaFactory"
 import { SKYBOX_COLOR,INIT_CAMERA_POS,PERSPECTIVE_CAMERA_CONFIG,AMBIENT_INTENSITY,SPOT_INTENSITY,SPOT_HEIGHT,SPOT_COLOR,SPOT_DISTANCE,SPOT_ANGLE,SPOT_PENUMBRA,SPOT_DECAY } from "./constants"
-
+/**
+ * Creates a new Scene.
+ * @class
+ */
 export class Scene{
 
     scene : THREE.Scene;

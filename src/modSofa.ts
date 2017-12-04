@@ -1,7 +1,10 @@
 import { Sofa,Armrest,Backsupport } from './sofaModel'
 import { SofaFactory } from './sofaFactory'
 import * as THREE from 'three'
-
+/**
+ * Creates a KopaViewer.
+ * @class
+ */
 export class ModifySofaDialog{
 
     selectedSofa : Sofa

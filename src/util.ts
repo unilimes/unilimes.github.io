@@ -7,7 +7,10 @@ import { ModifySofaDialog } from "./modSofa"
 import { BLACK_CUSION,BLUE_CUSION,LIGHTGRAY_CUSION,PURPLE_CUSION,YELLOW_CUSION,SCALE,PRICE,SOFAHEIGHT, SOFAWIDTH,HIGHLIGHT_COLOR2,CHARCOALBLACK,CHALK, WHITE,BLACK,BLUE,PINK,BROWN,CHARCOAL,NAVY,BEIGE,LIGHTGRAY,NODESIZE } from "./constants"
 
 let orbitControls = OrbitControls( THREE );
-
+/**
+ * Creates a new Util.
+ * @class
+ */
 export class Util{
     
     camera : THREE.Camera;
@@ -54,7 +57,10 @@ export class Util{
         this.mouse.y = - ( (e.clientY-rect.top) / canvas.clientHeight * 2 )+ 1
     }
 }
-
+/**
+ * Creates a new OnHoverControls.
+ * @class
+ */
 export class OnHoverControls{
 
     sphereMaterial : THREE.MeshPhongMaterial = new THREE.MeshPhongMaterial({
@@ -402,7 +408,7 @@ export class OnHoverControls{
             this.smallerTooltip.appendChild(accElement)
         }
     }
-
+    /** @function cloneMirror */
     cloneMirror(targetSofa:Sofa,side:string){
         let ztranslation;
         side == 'top' ? ztranslation = - SOFAWIDTH - SOFAWIDTH*0.13 : 
@@ -422,7 +428,7 @@ export class OnHoverControls{
             mesh.position.set(0,0,ztranslation) 
         })
     }
-
+    /** @function DismissTooltip */
     dismissTooltip(){
         this.smallerTooltip.style.left = '-9999px';
         this.sphereOnHover = false;
@@ -437,7 +443,7 @@ export class OnHoverControls{
             this.priceCalc()
         },0)
     }
-
+    /** @function PriceCalc */
     priceCalc(){
         let sofaTally = 0, armTally = 0, backTally = 0, cushionTally = 0;
         let sides = ['left','right','top','bottom','cushion'];
@@ -470,6 +476,7 @@ window['kopa_tally'] = {
     back: backTally,
     cushion:cushionTally
 };
+        /** @function PriceTally */
         let priceTally = `
 <div class="countSofa">${sofaTally}<br />
     ${backTally}<br />
@@ -490,13 +497,14 @@ window['kopa_tally'] = {
         let width = Math.round((boundingBox.max.x - boundingBox.min.x) * SCALE);
         let height = Math.round((boundingBox.max.y - boundingBox.min.y) * SCALE);
         let depth = Math.round((boundingBox.max.z - boundingBox.min.z) * SCALE);
-
+        /** @function Dimension */
         let dimension = `
             <div class="blockDimantion">
                 <span class="dimamtionStyle">DIMENTION (cm)</span> <br />
                 ${width} x ${depth} x ${height}
             </div>
         `;
+        /** @function pricePanel */
         let pricePanel = document.getElementById('webgl_info');
         pricePanel.innerHTML = priceTally + dimension
     }

@@ -1,6 +1,9 @@
 import * as THREE from "three"
 import {SofaFactory} from "./sofaFactory"
-
+/**
+ * Creates a new Sofa.
+ * @class
+ */
 export class Sofa{
 
     meshes:THREE.Mesh[];
@@ -27,7 +30,7 @@ export class Sofa{
         this.material = material;
         this.meshes = [new THREE.Mesh( geometry, this.material ),new THREE.Mesh(legGeometry,legMaterial)]
     }
-
+    /** @function clone */
     clone(sofaFactory:SofaFactory):Sofa{
         let newSofaGeometry = this.geometry.clone();
         let newSofaMaterial :any = this.material.clone();
@@ -47,7 +50,7 @@ export class Sofa{
         });
         return newSofa
     }
-
+    /** @function mirrorXZ */
     mirrorXZ(){
         let arrSides = ['top','left','right','bottom','cushion'];
 
@@ -72,7 +75,7 @@ export class Sofa{
             this.top = undefined
         }
     }
-
+    /** @function hasBackRest */
     hasBackRest():number{
         let pos = 0;
         if ( this.top && this.top.constructor.name == 'Backsupport' ){
@@ -84,7 +87,10 @@ export class Sofa{
         return pos
     }
 }
-
+/**
+ * Creates a new SofaAddon.
+ * @class
+ */
 export abstract class SofaAddon{
     
     parent:Sofa;
@@ -101,7 +107,10 @@ export abstract class SofaAddon{
         this.material = this.parent.material
     }
 }
-
+/**
+ * Creates a new Armrest.
+ * @class
+ */
 export class Armrest extends SofaAddon{
     constructor( sofa:Sofa,geometry:THREE.Geometry,legGeometry:THREE.Geometry,legMaterial:THREE.Material){
         super( sofa );
@@ -115,6 +124,10 @@ export class Armrest extends SofaAddon{
     }
 }
 
+/**
+ * Creates a new Backsupport.
+ * @class
+ */
 export class Backsupport extends SofaAddon{
     pinGeometry : THREE.Geometry;
     pinMaterial : THREE.Material;
@@ -129,7 +142,10 @@ export class Backsupport extends SofaAddon{
         return new Backsupport(sofa,this.geometry.clone(),this.pinGeometry.clone(),this.pinMaterial.clone())
     }
 }
-
+/**
+ * Creates a new Cushion.
+ * @class
+ */
 export class Cushion extends SofaAddon{
     constructor( sofa:Sofa,geometry:THREE.Geometry ){
         super( sofa );

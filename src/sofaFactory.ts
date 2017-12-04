@@ -1,7 +1,10 @@
 import * as THREE from "three"
 import { Sofa,Armrest,Backsupport,Cushion } from "./sofaModel"
 import { CHALK,ROOT,SOFAWIDTH,WHITE,CHARCOAL,NAVY,LIGHTGRAY,BEIGE,TEXTURE_WRAPS,TEXTURE_WRAPT,TEXTURE_BUMP } from "./constants"
-
+/**
+ * Creates a new Util.
+ * @class
+ */
 export class SofaFactory {
 
     castShadow : boolean = false;
@@ -58,7 +61,7 @@ export class SofaFactory {
         this.material = this.beigeMaterial;
         this.sofaLedger = []
     }
-
+    /** @function loadGeometries */
     loadGeometries( callback : ()=>void ){
         Promise.all([
             new Promise((resolve,reject)=>{
@@ -151,7 +154,7 @@ export class SofaFactory {
         })
 
     }
-
+    /** @function makeANewSofa */
     makeANewSofa(sofa?:Sofa,position?:string):Sofa{
         if( sofa ){
             if( !sofa[position] ){
@@ -216,7 +219,7 @@ export class SofaFactory {
             return newSofa
         }
     }
-
+    /** @function addCushion */
     addCushion(sofa:Sofa){
         sofa.cushion = new Cushion(sofa,this.cushionGeometry);
         sofa.cushion.meshes.forEach(mesh=>{
@@ -224,7 +227,7 @@ export class SofaFactory {
             sofa.meshes[0].add( mesh );
         })
     }
-
+    /** @function addArmrest */
     addArmrest(sofa:Sofa,position:string){
         if ( !sofa[position] ){
 
@@ -259,7 +262,7 @@ export class SofaFactory {
             throw new Error('This position is already occupied!')
         }
     }
-
+    /** @function addBacksupport */
     addBacksupport(sofa:Sofa,position:string){
         if ( !sofa[position]){
             sofa[position] = new Backsupport(sofa,this.backsupportGeometry,this.sofaPinsGeometry,this.pinMaterial);
@@ -291,14 +294,14 @@ export class SofaFactory {
             throw new Error('This position is already occupied!')
         }
     }
-
+    /** @function changeColor */
     changeColor(sofa:Sofa,color:number){
         if( sofa ){
             let material : any = sofa.material;
             material.color.setHex(color)
         }
     }
-
+    /** @function changeColorCushion */
     changeColorCushion( cushion:Cushion, color:number){
         if( cushion ){
             let material : any = cushion.meshes[0].material;
@@ -307,6 +310,7 @@ export class SofaFactory {
     }
 
     /* remove acc /sofa from view */
+    /** @function remove */
     remove(sofa:Sofa,position:string){
         if( sofa[position] ){
             if( sofa[position].constructor.name == 'Sofa' ){
@@ -320,6 +324,7 @@ export class SofaFactory {
     }
 
     /* once sofa is removed from view, it also needs to be removed from the ledger */
+    /** @function removeAllSofasFromLedger */
     removeAllSofasFromLedger(sofa:any){
         this.sofaLedger.forEach( (itSofa,idx,arr) => {
             if (sofa === itSofa ) { 
@@ -334,6 +339,7 @@ export class SofaFactory {
     }
 
     /* given a mesh, find the Sofa obj in ledger */
+    /** @function findSofa */
     findSofa(mesh:THREE.Object3D):Sofa{
         /* intersection could be an accessory or base sofa */
         let sofa =  this.sofaLedger.find( sofa => sofa.meshes[0] === mesh );
