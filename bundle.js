@@ -45807,42 +45807,6 @@ var SofaFactory = /** @class */ (function () {
             }),
             new Promise(function (resolve, reject) {
                 var mainLoader = new THREE.JSONLoader();
-                mainLoader.load(constants_1.ROOT + "./blenderobj/sofalegs.json", function (geometry) {
-                    _this.sofaLegsGeometry = geometry;
-                    resolve();
-                }, function () { }, function (e) {
-                    reject(e.message);
-                });
-            }),
-            new Promise(function (resolve, reject) {
-                var mainLoader = new THREE.JSONLoader();
-                mainLoader.load(constants_1.ROOT + "./blenderobj/armlegs.json", function (geometry) {
-                    _this.armrestLegsGeometry = geometry;
-                    resolve();
-                }, function () { }, function (e) {
-                    reject(e.message);
-                });
-            }),
-            // new Promise((resolve,reject)=>{
-            //     let mainLoader = new THREE.JSONLoader()
-            //     mainLoader.load(ROOT + "./blenderobj/backrestlegs.json",(geometry)=>{
-            //         this.backsupportLegsGeometry = geometry
-            //         resolve()
-            //     },()=>{},(e)=>{
-            //         reject(e.message)
-            //     })
-            // }),
-            new Promise(function (resolve, reject) {
-                var mainLoader = new THREE.JSONLoader();
-                mainLoader.load(constants_1.ROOT + "./blenderobj/backrestpins.json", function (geometry) {
-                    _this.sofaPinsGeometry = geometry;
-                    resolve();
-                }, function () { }, function (e) {
-                    reject(e.message);
-                });
-            }),
-            new Promise(function (resolve, reject) {
-                var mainLoader = new THREE.JSONLoader();
                 mainLoader.load(constants_1.ROOT + "./blenderobj/cushion.json", function (geometry) {
                     geometry.computeVertexNormals();
                     _this.cushionGeometry = geometry;

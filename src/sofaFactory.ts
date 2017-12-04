@@ -89,42 +89,6 @@ export class SofaFactory {
                 })
             }),
             new Promise((resolve,reject)=>{
-                let mainLoader = new THREE.JSONLoader();
-                mainLoader.load(ROOT + "./blenderobj/sofalegs.json",(geometry)=>{
-                    this.sofaLegsGeometry = geometry;
-                    resolve()
-                },()=>{},(e)=>{
-                    reject(e.message)
-                })
-            }),
-            new Promise((resolve,reject)=>{
-                let mainLoader = new THREE.JSONLoader();
-                mainLoader.load(ROOT + "./blenderobj/armlegs.json",(geometry)=>{
-                    this.armrestLegsGeometry = geometry;
-                    resolve()
-                },()=>{},(e)=>{
-                    reject(e.message)
-                })
-            }),
-            // new Promise((resolve,reject)=>{
-            //     let mainLoader = new THREE.JSONLoader()
-            //     mainLoader.load(ROOT + "./blenderobj/backrestlegs.json",(geometry)=>{
-            //         this.backsupportLegsGeometry = geometry
-            //         resolve()
-            //     },()=>{},(e)=>{
-            //         reject(e.message)
-            //     })
-            // }),
-            new Promise((resolve,reject)=>{
-                let mainLoader = new THREE.JSONLoader();
-                mainLoader.load(ROOT + "./blenderobj/backrestpins.json",(geometry)=>{
-                    this.sofaPinsGeometry = geometry;
-                    resolve()
-                },()=>{},(e)=>{
-                    reject(e.message)
-                })
-            }),
-            new Promise((resolve,reject)=>{
                     let mainLoader = new THREE.JSONLoader();
                     mainLoader.load(ROOT + "./blenderobj/cushion.json",(geometry)=>{
                         geometry.computeVertexNormals();
@@ -186,17 +150,6 @@ export class SofaFactory {
             callback()
         })
 
-        // mainLoader.load("blenderobj/main.json",(geometry)=>{
-        //     this.geometry = geometry
-        // })
-
-        // armLoader.load("blenderobj/arm.json",(geometry)=>{
-        //     this.armrestGeometry = geometry
-        // })
-
-        // backLoader.load("blenderobj/back.json",(geometry)=>{
-        //     this.backsupportGeometry = geometry
-        // })
     }
 
     makeANewSofa(sofa?:Sofa,position?:string):Sofa{
@@ -275,7 +228,7 @@ export class SofaFactory {
     addArmrest(sofa:Sofa,position:string){
         if ( !sofa[position] ){
 
-            sofa[position] = new Armrest(sofa,this.armrestGeometry,this.armrestLegsGeometry,this.legMaterial)
+            sofa[position] = new Armrest(sofa,this.armrestGeometry,this.armrestLegsGeometry,this.legMaterial);
             
             sofa[position].meshes.forEach(mesh=>{
                 mesh.castShadow = true;
@@ -309,7 +262,7 @@ export class SofaFactory {
 
     addBacksupport(sofa:Sofa,position:string){
         if ( !sofa[position]){
-            sofa[position] = new Backsupport(sofa,this.backsupportGeometry,this.sofaPinsGeometry,this.pinMaterial)
+            sofa[position] = new Backsupport(sofa,this.backsupportGeometry,this.sofaPinsGeometry,this.pinMaterial);
             sofa[position].meshes.forEach(mesh=>{
                 mesh.castShadow = true;
                 sofa.meshes[0].add( mesh )

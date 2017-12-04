@@ -155,7 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 (<HTMLInputElement>(document.querySelectorAll(data)[0].children[0])).value = value;
                 document.getElementById(id).click();
                 document.getElementById(id).style.display = 'none';
-
             }
 
             if( window['kopa_tally'].cushion > 0 ){
