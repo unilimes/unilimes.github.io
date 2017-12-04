@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: sofaModel.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: sofaModel.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
+var __extends = (this &amp;&amp; this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array &amp;&amp; function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var THREE = require("three");
+/**
+ * Creates a new Sofa.
+ * @class
+ */
+var Sofa = (function () {
+    /** Constructor Class Sofa */
+    function Sofa(geometry, material, legGeometry, legMaterial) {
+        this.material = material;
+        this.geometry = geometry;
+        this.legGeometry = legGeometry;
+        this.legMaterial = legMaterial;
+        this.material = material;
+        this.meshes = [new THREE.Mesh(geometry, this.material), new THREE.Mesh(legGeometry, legMaterial)];
+    }
+    Sofa.prototype.clone = function (sofaFactory) {
+        var _this = this;
+        var newSofaGeometry = this.geometry.clone();
+        var newSofaMaterial = this.material.clone();
+        var newLegGeometry = this.legGeometry.clone();
+        var newlegMaterial = this.legMaterial.clone();
+        newSofaMaterial.emissive.setHex(0x000000);
+        var newSofa = new Sofa(newSofaGeometry, newSofaMaterial, newLegGeometry, newlegMaterial);
+        var arrSides = ['top', 'left', 'right', 'bottom', 'cushion'];
+        arrSides.forEach(function (side) {
+            if (_this[side] &amp;&amp; _this[side].constructor.name != 'Sofa') {
+                var addonName = _this[side].constructor.name;
+                sofaFactory['add' + addonName](newSofa, side);
+            }
+        });
+        return newSofa;
+    };
+    /** @function mirrorXZ */
+    Sofa.prototype.mirrorXZ = function () {
+        var arrSides = ['top', 'left', 'right', 'bottom', 'cushion'];
+        var tempSide;
+        if (this.top) {
+            this.top.meshes.forEach(function (mesh) {
+                mesh.rotateY(Math.PI);
+            });
+            tempSide = this.top;
+        }
+        if (this.bottom) {
+            this.bottom.meshes.forEach(function (mesh) {
+                mesh.rotateY(Math.PI);
+            });
+            this.top = this.bottom;
+            if (tempSide) {
+                this.bottom = tempSide;
+            }
+        }
+        else if (tempSide) {
+            this.bottom = tempSide;
+            this.top = undefined;
+        }
+    };
+    /** @function hasBackRest */
+    Sofa.prototype.hasBackRest = function () {
+        var pos = 0;
+        if (this.top &amp;&amp; this.top.constructor.name == 'Backsupport') {
+            pos++;
+        }
+        if (this.bottom &amp;&amp; this.bottom.constructor.name == 'Backsupport') {
+            pos--;
+        }
+        return pos;
+    };
+    return Sofa;
+}());
+exports.Sofa = Sofa;
+/** export abstract class Sofa Addon */
+var SofaAddon = (function () {
+    /* defines parent, and inherits material from parent */
+    function SofaAddon(sofa) {
+        this.parent = sofa;
+        this.material = this.parent.material;
+    }
+    return SofaAddon;
+}());
+exports.SofaAddon = SofaAddon;
+/** export class Armrest extends Sofa Addon */
+var Armrest = (function (_super) {
+    __extends(Armrest, _super);
+    function Armrest(sofa, geometry, legGeometry, legMaterial) {
+        var _this = _super.call(this, sofa) || this;
+        _this.geometry = geometry;
+        _this.legGeometry = legGeometry;
+        _this.legMaterial = legMaterial;
+        _this.meshes = [new THREE.Mesh(_this.geometry, _this.material), new THREE.Mesh(_this.legGeometry, _this.legMaterial)];
+        return _this;
+    }
+    Armrest.prototype.clone = function (sofa) {
+        return new Armrest(sofa, this.geometry.clone(), this.legGeometry.clone(), this.legMaterial.clone());
+    };
+    return Armrest;
+}(SofaAddon));
+exports.Armrest = Armrest;
+/** export class Backsupport extends SofaAddon */
+var Backsupport = (function (_super) {
+    __extends(Backsupport, _super);
+    function Backsupport(sofa, geometry, pinGeometry, pinMaterial) {
+        var _this = _super.call(this, sofa) || this;
+        _this.geometry = geometry;
+        _this.pinGeometry = pinGeometry;
+        _this.pinMaterial = pinMaterial;
+        _this.meshes = [new THREE.Mesh(_this.geometry, _this.material), new THREE.Mesh(_this.legGeometry, _this.legMaterial), new THREE.Mesh(_this.pinGeometry, _this.pinMaterial)];
+        return _this;
+    }
+    Backsupport.prototype.clone = function (sofa) {
+        return new Backsupport(sofa, this.geometry.clone(), this.pinGeometry.clone(), this.pinMaterial.clone());
+    };
+    return Backsupport;
+}(SofaAddon));
+exports.Backsupport = Backsupport;
+/* Export class Cushion extends Sofa Addon */
+var Cushion = (function (_super) {
+    __extends(Cushion, _super);
+    function Cushion(sofa, geometry) {
+        var _this = _super.call(this, sofa) || this;
+        _this.geometry = geometry;
+        _this.meshes = [new THREE.Mesh(_this.geometry, _this.material)];
+        return _this;
+    }
+    Cushion.prototype.clone = function (sofa) {
+        return new Cushion(sofa, this.geometry.clone());
+    };
+    Cushion.prototype.reposition = function () {
+        switch (this.parent.hasBackRest()) {
+            case 0:
+                {
+                    this.meshes[0].visible = false;
+                }
+                break;
+            case 1:
+                {
+                    this.meshes[0].visible = true;
+                    this.meshes[0].setRotationFromAxisAngle(new THREE.Vector3(0, 0, 1), 0);
+                }
+                break;
+            case -1:
+                {
+                    this.meshes[0].visible = true;
+                    this.meshes[0].setRotationFromAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI);
+                }
+                break;
+        }
+    };
+    return Cushion;
+}(SofaAddon));
+exports.Cushion = Cushion;
+//# sourceMappingURL=sofaModel.js.map</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Floor.html">Floor</a></li><li><a href="KopaViewer.html">KopaViewer</a></li><li><a href="OnHoverControls.html">OnHoverControls</a></li><li><a href="Sofa.html">Sofa</a></li><li><a href="SofaFactory.html">SofaFactory</a></li><li><a href="Util.html">Util</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addtocartforclick">add to cart for click</a></li><li><a href="global.html#addArmrest">addArmrest</a></li><li><a href="global.html#addBacksupport">addBacksupport</a></li><li><a href="global.html#addCushion">addCushion</a></li><li><a href="global.html#animationFrame">animationFrame</a></li><li><a href="global.html#Armrest">Armrest</a></li><li><a href="global.html#Backsupport">Backsupport</a></li><li><a href="global.html#changeColor">changeColor</a></li><li><a href="global.html#cloneMirror">cloneMirror</a></li><li><a href="global.html#configShadow">configShadow</a></li><li><a href="global.html#constructorKopaViewer">constructor KopaViewer</a></li><li><a href="global.html#ConstructorUtil">Constructor Util</a></li><li><a href="global.html#dismissTooltip">dismissTooltip</a></li><li><a href="global.html#Estimateddimension">Estimated dimension</a></li><li><a href="global.html#FACTOR">FACTOR</a></li><li><a href="global.html#findSofa">findSofa</a></li><li><a href="global.html#hasBackRest">hasBackRest</a></li><li><a href="global.html#lightupObj">lightupObj</a></li><li><a href="global.html#linktocart">link to cart</a></li><li><a href="global.html#loadGeometries">loadGeometries</a></li><li><a href="global.html#makeANewSofa">makeANewSofa</a></li><li><a href="global.html#mirrorXZ">mirrorXZ</a></li><li><a href="global.html#mouseClickEvent">mouseClickEvent</a></li><li><a href="global.html#mouseMoveEvent">mouseMoveEvent</a></li><li><a href="global.html#PRICE">PRICE</a></li><li><a href="global.html#PriceTally">Price Tally</a></li><li><a href="global.html#priceCalc">priceCalc</a></li><li><a href="global.html#remove">remove</a></li><li><a href="global.html#removeAllSofasFromLedger">removeAllSofasFromLedger</a></li><li><a href="global.html#ROOT">ROOT</a></li><li><a href="global.html#SCALE">SCALE</a></li><li><a href="global.html#showToolTip">showToolTip</a></li><li><a href="global.html#SofaAddon">SofaAddon</a></li><li><a href="global.html#tetherTo">tetherTo</a></li><li><a href="global.html#WHITE">WHITE</a></li><li><a href="global.html#zoomInapp">zoomIn app</a></li><li><a href="global.html#zoomOutapp">zoomOut app</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 04 2017 14:56:41 GMT+0200 (EET)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: main.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: main.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @api {get} /KOPA/
+ * @apiName KOPA3D
+ * @apiGroup
+ *
+ * @apiParam {Number} id Users unique ID.
+ *
+ * @apiSuccess {value} Value check number of sofa.
+ * @apiSuccess {value} Value check number of backrest.
+ * @apiSuccess {value} Value check number of armrest.
+ * @apiSuccess {value} Value check number of cushion.
+ *
+ */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var scene_1 = require("./scene");
+var THREE = require("three");
+var util_1 = require("./util");
+var modSofa_1 = require("./modSofa");
+var constants_1 = require("./constants");
+/**
+ * Creates a new KopaViewer.
+ * @class
+ */
+var KopaViewer = (function () {
+    /* canvas should be the html element passed */
+    /** @function constructor KopaViewer */
+    function KopaViewer(canvas) {
+        var _this = this;
+        /* necessary to keep the scope */
+        /** @function animationFrame */
+        this.animationFrame = function () {
+            /* update control, or else will not have mouse driven control of webgl */
+            _this.util.control.update();
+            /* set the center of the scene to be the average of all sofas */
+            _this.scene.cameraAnchorDest.position.set(0, 0, 0);
+            var counter = 0;
+            _this.scene.sofaFactory.sofaLedger.forEach(function (sofa) {
+                _this.scene.cameraAnchorDest.position.add(sofa.meshes[0].position);
+                counter++;
+            });
+            if (counter > 0) {
+                _this.scene.cameraAnchorDest.position.divideScalar(counter);
+            }
+            /* reposition camera anchor */
+            _this.scene.cameraAnchor.position.multiplyScalar(9).add(_this.scene.cameraAnchorDest.position).divideScalar(10);
+            /* if a node is SELECTED, then raycast will not be tested. Until the node is unselected */
+            if (!_this.onHoverControls.sphereOnSelect) {
+                /* find mouse on hover target */
+                var raycaster = new THREE.Raycaster();
+                raycaster.setFromCamera(_this.util.mouse, _this.scene.camera);
+                var intersects = raycaster.intersectObjects(_this.scene.floor.sofaRoot.children, true);
+                /* firstly, reset the existing intersects with spheres, if any */
+                _this.onHoverControls.INTERSECTS.forEach(function (INTERSECT) {
+                    INTERSECT.material.emissive.setHex(INTERSECT.currentHex);
+                });
+                _this.onHoverControls.INTERSECTS = [];
+                _this.onHoverControls.sphereOnHover = false;
+                /* next, detect any intersections with spheres */
+                intersects.forEach(function (intersect) {
+                    _this.onHoverControls.lightupObj(intersect.object);
+                });
+                /* reselect the sofa only if no sphere is selected */
+                if (!_this.onHoverControls.sphereOnHover) {
+                    /* onhover sofa mesh */
+                    /* reset previous on hover emissivehex */
+                    _this.INTERSECT ? _this.INTERSECT.material.emissive.setHex(_this.INTERSECT.currentHex) : {};
+                    /* modify on hover target appearance */
+                    if (intersects.length > 0) {
+                        _this.INTERSECT = intersects[0].object;
+                        _this.INTERSECT.currentHex = _this.INTERSECT.material.emissive.getHex();
+                        _this.INTERSECT.material.emissive.setHex(constants_1.HIGHLIGHT_COLOR);
+                    }
+                    else {
+                        _this.INTERSECT = null;
+                    }
+                }
+                _this.onHoverControls.tetherTo(_this.INTERSECT);
+            }
+            if (constants_1.RENDER_MIRROR) {
+                _this.scene.floor.groundMirror.render();
+            }
+            _this.renderer.render(_this.scene.scene, _this.scene.camera);
+            requestAnimationFrame(_this.animationFrame);
+        };
+        this.canvas = canvas;
+        /* setting up the renderer */
+        this.renderer = new THREE.WebGLRenderer();
+        this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
+        this.renderer.setClearColor(constants_1.RENDERER_COLOR);
+        this.canvas.appendChild(this.renderer.domElement);
+        /* setting up the scene + units */
+        this.scene = new scene_1.Scene(this.renderer);
+        /* util deals with drag controls and highlighting */
+        this.util = new util_1.Util(this.scene.camera, this.renderer.domElement);
+        this.modSofa = new modSofa_1.ModifySofaDialog(this.scene.sofaFactory);
+        this.canvas.addEventListener('mousemove', function (e) { return _this.util.mouseMoveEvent(_this.canvas, e); }, false);
+        this.canvas.addEventListener('click', function (e) { return _this.onHoverControls.mouseClickEvent(_this.canvas, e, _this.modSofa); }, false);
+        this.onHoverControls = new util_1.OnHoverControls(this.scene.sofaFactory);
+        if (constants_1.RENDER_SPOT)
+            this.configShadow();
+        this.init();
+    }
+    /** @function configShadow */
+    KopaViewer.prototype.configShadow = function () {
+        this.renderer.shadowMap.enabled = true;
+        this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        this.scene.floor.floor.receiveShadow = true;
+        this.scene.sofaFactory.castShadow = true;
+        this.scene.spot.castShadow = true;
+        this.scene.spot.shadow.mapSize.width = 1024;
+        this.scene.spot.shadow.mapSize.height = 1024;
+    };
+    KopaViewer.prototype.init = function () {
+        this.scene.setup();
+        this.animationFrame();
+    };
+    return KopaViewer;
+}());
+exports.KopaViewer = KopaViewer;
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.getElementById('kopa_webgl')) {
+        /* init viewer */
+        var kopaViewer_1 = new KopaViewer(document.getElementById('kopa_webgl'));
+        // /* overlay */
+        document.getElementById('kopa_webgl_cover');
+        document.getElementById('kopa_webgl_cover').remove();
+        document.getElementById('webgl_overlay_footer').style.visibility = 'visible';
+        /** bind shop ui button */
+        // document.getElementById('shop_ui_test_btn').addEventListener('click',(ev)=>{
+        //     let testbutton = document.getElementById('yui_3_17_2_1_1502516319895_248').click()
+        // })
+        /** Event click for button reserve now. */
+        document.getElementById('webgl_reserve_now').addEventListener('click', function () {
+            // (&lt;HTMLInputElement>document.getElementById('webgl_sqsp_sofa')).value = window['kopa_tally'].sofa;
+            // (&lt;HTMLInputElement>document.getElementById('webgl_sqsp_arm')).value = window['kopa_tally'].arm;
+            // (&lt;HTMLInputElement>document.getElementById('webgl_sqsp_back')).value = window['kopa_tally'].back;
+            // (&lt;HTMLInputElement>document.getElementById('webgl_sqsp_cushion')).value = window['kopa_tally'].cushion;
+            /** This elements sofa add to cart for click. */
+            /** @function add to cart for click */
+            document.getElementById('sofa').click();
+            document.getElementById('arm').click();
+            document.getElementById('back').click();
+            document.getElementById('cushion').click();
+            /** This is a button and value for add to cart. */
+            // let buttonSofa = document.querySelector('.buttonSofa'),
+            //     sofaValue = buttonSofa.dataset;
+            //     sofaValue.quantity = window['kopa_tally'].sofa;
+            //
+            // let buttonArm = document.querySelector('.buttonArm'),
+            //     armValue = buttonArm.dataset;
+            //     armValue.quantity = window['kopa_tally'].arm;
+            //
+            //
+            // let buttonBackrest = document.querySelector('.buttonBackrest'),
+            //     backValue = buttonBackrest.dataset;
+            //     backValue.quantity = window['kopa_tally'].back;
+            //
+            // let buttonCushion = document.querySelector('.buttonCushion'),
+            //     cushionValue = buttonCushion.dataset;
+            //     cushionValue.quantity = window['kopa_tally'].cushion;
+            /** This code create link to cart. */
+            /** @function link to cart */
+            var anchor = document.createElement('a');
+            anchor.setAttribute('href', '/cart');
+            document.body.appendChild(anchor);
+            anchor.click();
+            // console.log(window['kopa_tally'])
+        });
+        /** This Event zoomIn app. */
+        /** @function zoomIn app */
+        document.getElementById('webgl_control_zoomIn').addEventListener('click', function () {
+            console.log(kopaViewer_1.scene.camera.position, constants_1.ZOOMFACTOR);
+            kopaViewer_1.scene.camera.position.set(kopaViewer_1.scene.camera.position.x / constants_1.ZOOMFACTOR, kopaViewer_1.scene.camera.position.y / constants_1.ZOOMFACTOR, kopaViewer_1.scene.camera.position.z / constants_1.ZOOMFACTOR);
+        });
+        /** This Event zoomOut app. */
+        /** @function zoomOut app */
+        document.getElementById('webgl_control_zoomOut').addEventListener('click', function () {
+            // kopaViewer.util.control.dollyOut(1.2)
+            kopaViewer_1.scene.camera.position.set(kopaViewer_1.scene.camera.position.x * constants_1.ZOOMFACTOR, kopaViewer_1.scene.camera.position.y * constants_1.ZOOMFACTOR, kopaViewer_1.scene.camera.position.z * constants_1.ZOOMFACTOR);
+        });
+        window['kopaViewer'] = kopaViewer_1;
+    }
+});
+//# sourceMappingURL=main.js.map</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Floor.html">Floor</a></li><li><a href="KopaViewer.html">KopaViewer</a></li><li><a href="OnHoverControls.html">OnHoverControls</a></li><li><a href="Sofa.html">Sofa</a></li><li><a href="SofaFactory.html">SofaFactory</a></li><li><a href="Util.html">Util</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addtocartforclick">add to cart for click</a></li><li><a href="global.html#addArmrest">addArmrest</a></li><li><a href="global.html#addBacksupport">addBacksupport</a></li><li><a href="global.html#addCushion">addCushion</a></li><li><a href="global.html#animationFrame">animationFrame</a></li><li><a href="global.html#Armrest">Armrest</a></li><li><a href="global.html#Backsupport">Backsupport</a></li><li><a href="global.html#changeColor">changeColor</a></li><li><a href="global.html#cloneMirror">cloneMirror</a></li><li><a href="global.html#configShadow">configShadow</a></li><li><a href="global.html#constructorKopaViewer">constructor KopaViewer</a></li><li><a href="global.html#ConstructorUtil">Constructor Util</a></li><li><a href="global.html#dismissTooltip">dismissTooltip</a></li><li><a href="global.html#Estimateddimension">Estimated dimension</a></li><li><a href="global.html#FACTOR">FACTOR</a></li><li><a href="global.html#findSofa">findSofa</a></li><li><a href="global.html#hasBackRest">hasBackRest</a></li><li><a href="global.html#lightupObj">lightupObj</a></li><li><a href="global.html#linktocart">link to cart</a></li><li><a href="global.html#loadGeometries">loadGeometries</a></li><li><a href="global.html#makeANewSofa">makeANewSofa</a></li><li><a href="global.html#mirrorXZ">mirrorXZ</a></li><li><a href="global.html#mouseClickEvent">mouseClickEvent</a></li><li><a href="global.html#mouseMoveEvent">mouseMoveEvent</a></li><li><a href="global.html#PRICE">PRICE</a></li><li><a href="global.html#PriceTally">Price Tally</a></li><li><a href="global.html#priceCalc">priceCalc</a></li><li><a href="global.html#remove">remove</a></li><li><a href="global.html#removeAllSofasFromLedger">removeAllSofasFromLedger</a></li><li><a href="global.html#ROOT">ROOT</a></li><li><a href="global.html#SCALE">SCALE</a></li><li><a href="global.html#showToolTip">showToolTip</a></li><li><a href="global.html#SofaAddon">SofaAddon</a></li><li><a href="global.html#tetherTo">tetherTo</a></li><li><a href="global.html#WHITE">WHITE</a></li><li><a href="global.html#zoomInapp">zoomIn app</a></li><li><a href="global.html#zoomOutapp">zoomOut app</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 04 2017 14:56:41 GMT+0200 (EET)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

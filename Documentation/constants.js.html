@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: constants.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: constants.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/** @constant
+ @type {number}
+ @default
+ */
+exports.FACTOR = 11;
+exports.SOFAWIDTH = 3.27 * exports.FACTOR;
+exports.SOFAHEIGHT = 1.45 * exports.FACTOR;
+exports.ZOOMFACTOR = 1.2;
+exports.INIT_CAMERA_POS = [0, 45, 90];
+exports.PERSPECTIVE_CAMERA_CONFIG = {
+    FOV: 60,
+    aspectRatio: 16 / 9,
+    clipNear: 0.125,
+    clipFar: 2048
+};
+exports.HIGHLIGHT_COLOR = 0x111111;
+exports.HIGHLIGHT_COLOR2 = 0xec0044;
+/** @constant
+ @type {string}
+ @default
+ */
+exports.WHITE = 0xcacdd2;
+exports.BLACK = 0x222328;
+exports.BROWN = 0xa69d94;
+exports.PINK = 0xc4a8b6;
+exports.BLUE_ = 0x848dac;
+exports.CHALK = 0xddd7c9;
+exports.LIGHTGRAY = 0xa1a1a1;
+exports.BEIGE = 0x9b8f86;
+exports.BLUE = 0x1d274b;
+exports.CHARCOALBLACK = 0x141319;
+exports.CHARCOAL = 0x514d4a;
+exports.NAVY = 0x343b55;
+exports.LIGHTGRAY_ = 0x848484;
+exports.BEIGE_ = 0x897d6d;
+exports.TEXTURE_WRAPS = 2;
+exports.TEXTURE_WRAPT = 2;
+exports.TEXTURE_BUMP = 0.1;
+exports.NODESIZE = 0.1 * exports.FACTOR;
+/* renderer color */
+exports.RENDERER_COLOR = 0xFFFFFF;
+exports.SKYBOX_COLOR = 0xfafafa;
+// export const SKYBOX_COLOR = 0x161616
+/* floor */
+exports.RENDER_MIRROR = true;
+exports.FLOOR_COLOR = 0xe2e2e2;
+exports.MIRROR_COLOR = 0xa0a0a0;
+// export const MIRROR_COLOR = 0x7D7D7D
+/* light */
+exports.AMBIENT_INTENSITY = 0.3;
+exports.SPOT_HEIGHT = 64;
+exports.RENDER_SPOT = false;
+exports.SPOT_COLOR = 0xffffff;
+exports.SPOT_INTENSITY = 0.5;
+exports.SPOT_DISTANCE = 300;
+exports.SPOT_ANGLE = 3.05;
+exports.SPOT_PENUMBRA = 0.3;
+exports.SPOT_DECAY = 1;
+/* root folder for loading assets */
+/** @constant
+ @type {string}
+ @default
+ */
+exports.ROOT = 'https://unilimes.github.io.';
+// export const ROOT = 'http://localhost/kopa2/'
+/** @constant
+ @type {number}
+ @default
+ */
+exports.PRICE = {
+    SOFA: 330,
+    ARMREST: 220,
+    BACKREST: 110,
+    CUSHION: 30
+};
+/** @constant
+ @type {number}
+ @default
+ */
+exports.SCALE = 1000 / 37 / 11 * exports.FACTOR;
+//# sourceMappingURL=constants.js.map</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Floor.html">Floor</a></li><li><a href="KopaViewer.html">KopaViewer</a></li><li><a href="OnHoverControls.html">OnHoverControls</a></li><li><a href="Sofa.html">Sofa</a></li><li><a href="SofaFactory.html">SofaFactory</a></li><li><a href="Util.html">Util</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addtocartforclick">add to cart for click</a></li><li><a href="global.html#addArmrest">addArmrest</a></li><li><a href="global.html#addBacksupport">addBacksupport</a></li><li><a href="global.html#addCushion">addCushion</a></li><li><a href="global.html#animationFrame">animationFrame</a></li><li><a href="global.html#Armrest">Armrest</a></li><li><a href="global.html#Backsupport">Backsupport</a></li><li><a href="global.html#changeColor">changeColor</a></li><li><a href="global.html#cloneMirror">cloneMirror</a></li><li><a href="global.html#configShadow">configShadow</a></li><li><a href="global.html#constructorKopaViewer">constructor KopaViewer</a></li><li><a href="global.html#ConstructorUtil">Constructor Util</a></li><li><a href="global.html#dismissTooltip">dismissTooltip</a></li><li><a href="global.html#Estimateddimension">Estimated dimension</a></li><li><a href="global.html#FACTOR">FACTOR</a></li><li><a href="global.html#findSofa">findSofa</a></li><li><a href="global.html#hasBackRest">hasBackRest</a></li><li><a href="global.html#lightupObj">lightupObj</a></li><li><a href="global.html#linktocart">link to cart</a></li><li><a href="global.html#loadGeometries">loadGeometries</a></li><li><a href="global.html#makeANewSofa">makeANewSofa</a></li><li><a href="global.html#mirrorXZ">mirrorXZ</a></li><li><a href="global.html#mouseClickEvent">mouseClickEvent</a></li><li><a href="global.html#mouseMoveEvent">mouseMoveEvent</a></li><li><a href="global.html#PRICE">PRICE</a></li><li><a href="global.html#PriceTally">Price Tally</a></li><li><a href="global.html#priceCalc">priceCalc</a></li><li><a href="global.html#remove">remove</a></li><li><a href="global.html#removeAllSofasFromLedger">removeAllSofasFromLedger</a></li><li><a href="global.html#ROOT">ROOT</a></li><li><a href="global.html#SCALE">SCALE</a></li><li><a href="global.html#showToolTip">showToolTip</a></li><li><a href="global.html#SofaAddon">SofaAddon</a></li><li><a href="global.html#tetherTo">tetherTo</a></li><li><a href="global.html#WHITE">WHITE</a></li><li><a href="global.html#zoomInapp">zoomIn app</a></li><li><a href="global.html#zoomOutapp">zoomOut app</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 04 2017 14:56:41 GMT+0200 (EET)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
